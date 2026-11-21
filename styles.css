@@ -66,12 +66,7 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-behavior: auto;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html:not(.lenis-smooth) {
-    scroll-behavior: smooth;
-  }
+  overflow-anchor: none;
 }
 
 html.lenis,
@@ -93,6 +88,7 @@ html.lenis body {
 
 body {
   margin: 0;
+  overflow-anchor: none;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-text);

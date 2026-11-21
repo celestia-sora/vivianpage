@@ -36,7 +36,7 @@
     lenis = new window.Lenis({
       lerp: 0.11,
       smoothWheel: true,
-      anchors: { duration: 1.05 },
+      anchors: false,
     });
     document.documentElement.classList.add('is-smooth');
     startSmoothLoop();
@@ -46,8 +46,39 @@
     });
   }
 
+  let userScrolled = false;
+  ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach((evt) => {
+    window.addEventListener(
+      evt,
+      () => {
+        userScrolled = true;
+      },
+      { passive: true, once: true }
+    );
+  });
+
+  function lockTopOnLoad() {
+    if (userScrolled) return;
+    window.scrollTo(0, 0);
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true, force: true });
+    }
+  }
+
+  lockTopOnLoad();
+  window.addEventListener('pageshow', () => {
+    userScrolled = false;
+    lockTopOnLoad();
+    requestAnimationFrame(lockTopOnLoad);
+  });
+  window.addEventListener('load', () => {
+    lockTopOnLoad();
+    requestAnimationFrame(lockTopOnLoad);
+  });
+
   function scrollToSection(targetEl) {
     if (!targetEl) return;
+    userScrolled = true;
     if (lenis && !reducedMotion.matches) {
       lenis.scrollTo(targetEl, { duration: 1.05 });
     } else {
@@ -55,10 +86,10 @@
     }
   }
 
-  // Fallback smooth anchor scrolling when Lenis is off (e.g. touch/offline)
+  // Smooth anchor scrolling without mutating URL hash (keeps refresh anchored at top)
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href^="#"]');
-    if (!link || lenis) return;
+    if (!link) return;
     const id = link.getAttribute('href').slice(1);
     if (!id) return;
     const dest = document.getElementById(id);
