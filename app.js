@@ -291,7 +291,7 @@
       const bodySpan = quickOutput.querySelector('span:last-child');
       if (tagSpan) tagSpan.textContent = '[giggles]';
       if (bodySpan) {
-        bodySpan.textContent = 'แบร่! บอกว่ายังไม่เปิดลิงก์ public ไง รอ dev อัปเดต URL ใหม่ก่อนนะ อยากลองเลยก็รัน Local หรือโหลด Android Beta 2 ไปเล่นพลางๆ ก่อน!';
+        bodySpan.textContent = 'แบร่! บอกว่ายังไม่เปิดลิงก์ public ไง รอ dev อัปเดต URL ใหม่ก่อนนะ อยากลองเลยก็โคลน repo vivianlabs ไปรัน Local เล่นพลางๆ ก่อน!';
       }
     });
   }
@@ -364,13 +364,13 @@
     },
     {
       badge: 'KOTLIN + JETPACK COMPOSE',
-      tag: 'BETA 2 APK',
+      tag: 'PRIVATE REPO',
       title: 'vivianapp',
-      desc: 'แอป Android แท้ๆ ไม่มี WebView! ใช้ Talking Orb แทนโมเดล Live2D พร้อมเสียงพูด MP3 จาก TTS และถ่ายรูปส่งให้น้องดูจาก CameraX ได้เลย โหลดได้จาก GitHub',
+      desc: 'แอป Android แท้ๆ ใช้ Talking Orb, CameraX และเสียง TTS แต่ตอนนี้ขอปิด repo เป็น Private งดเปิดโหลดชั่วคราวนะ พอดีตัวแอปมีปัญหาเรื่องความปลอดภัยนิดหน่อยกับฝั่ง developer เลยไม่อยากให้ใครเข้ามาล่วงรู้ความลับของ dev จ้า',
       specs: [
         'UI: Native Jetpack Compose (Min SDK 26)',
-        'Security: Android Keystore AES/GCM Token',
         'Media: CameraX + 16 kHz Mono WAV Mic',
+        'Status: Private Repo (Security & Dev Privacy)',
       ],
     },
     {
@@ -463,7 +463,7 @@
     return mode === 'dere'
       ? {
           tag: '[giggles]',
-          msg: `รับทราบเรื่อง "${text}" แล้วจ้า~ ถ้าอยากคุยยาวๆ โคลน vivianlabs ไปรัน Local หรือโหลด Android Beta 2 เล่นได้เลยนะ!`,
+          msg: `รับทราบเรื่อง "${text}" แล้วจ้า~ ถ้าอยากคุยยาวๆ โคลน vivianlabs ไปรัน Local เล่นในเครื่องตัวเองได้เลยนะ!`,
         }
       : {
           tag: '[playful]',
