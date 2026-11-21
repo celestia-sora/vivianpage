@@ -446,14 +446,14 @@
       ],
     },
     {
-      badge: 'WORKERS + STATIC ASSETS',
-      tag: 'LIVE SURVEY',
+      badge: 'FEEDBACK & REPORT',
+      tag: 'BOOTH TEST',
       title: 'vivianFeedback',
-      desc: 'แบบสอบถามสไตล์คุยกับเพื่อนที่เก็บฟีดแบ็กจากคนลองเล่นลง Cloudflare D1 พร้อมคำนวณค่าสถิติ Mean และ SD ที่หลังบ้านโดยไม่รกหน้าจอ',
+      desc: '“ก็ไม่มีอะไรหรอก ก็แค่ระบบเก็บข้อมูลสำหรับพัฒนาต่อและทำส่งรายงานนิดหน่อยแค่นั้นแหละ” เก็บ Data และ Feedback จากคนที่ได้ลองเล่นของจริงตามบูท และคนที่ โซระจัง อยากให้ทดสอบเป็นพิเศษ',
       specs: [
-        'Ratings: 1-5 Project + 1-4 Satisfaction',
-        'Stats Engine: Backend Mean & SD on D1',
-        'Tone: Casual Gen-Z Friend Chat',
+        'Scope: คนที่ได้ลองเล่นของจริงตามบูท',
+        'Focus: คนที่ โซระจัง อยากให้ทดสอบเป็นพิเศษ',
+        'Purpose: เก็บข้อมูลพัฒนาต่อ & ทำส่งรายงาน',
       ],
     },
     {
