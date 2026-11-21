@@ -4,6 +4,69 @@
 
 (() => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const coarsePointer = window.matchMedia('(pointer: coarse)');
+
+  // ------------------------------------------------------------------------
+  // 0A. SILKY SMOOTH SCROLLING (LENIS WEIGHTED WHEEL + ANCHORS)
+  // ------------------------------------------------------------------------
+  let lenis = null;
+  let rafId = null;
+
+  function stopSmoothLoop() {
+    if (rafId !== null) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
+  function startSmoothLoop() {
+    if (!lenis || rafId !== null || document.hidden) return;
+    const tick = (time) => {
+      if (!lenis || document.hidden) {
+        rafId = null;
+        return;
+      }
+      lenis.raf(time);
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+  }
+
+  if (window.Lenis && !reducedMotion.matches && !coarsePointer.matches) {
+    lenis = new window.Lenis({
+      lerp: 0.11,
+      smoothWheel: true,
+      anchors: { duration: 1.05 },
+    });
+    document.documentElement.classList.add('is-smooth');
+    startSmoothLoop();
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopSmoothLoop();
+      else startSmoothLoop();
+    });
+  }
+
+  function scrollToSection(targetEl) {
+    if (!targetEl) return;
+    if (lenis && !reducedMotion.matches) {
+      lenis.scrollTo(targetEl, { duration: 1.05 });
+    } else {
+      targetEl.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+    }
+  }
+
+  // Fallback smooth anchor scrolling when Lenis is off (e.g. touch/offline)
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link || lenis) return;
+    const id = link.getAttribute('href').slice(1);
+    if (!id) return;
+    const dest = document.getElementById(id);
+    if (dest) {
+      e.preventDefault();
+      scrollToSection(dest);
+    }
+  });
 
   // ------------------------------------------------------------------------
   // 0. CELESTIA STUDIO PRESENT: ANIMATED GREETING CURTAIN
@@ -243,7 +306,7 @@
   if (topSecretBtn) {
     topSecretBtn.addEventListener('click', () => {
       const ctaEl = document.getElementById('cta');
-      if (ctaEl) ctaEl.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+      scrollToSection(ctaEl);
       if (quickOutput) {
         const tagSpan = quickOutput.querySelector('.cta-widget__tag');
         const bodySpan = quickOutput.querySelector('span:last-child');

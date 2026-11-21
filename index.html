@@ -160,7 +160,7 @@
       </div>
 
       <ul class="tile-grid">
-        <li class="tile-card tile-card--pink" data-reveal>
+        <li class="tile-card tile-card--pink" data-reveal style="--stagger:0">
           <div class="tile-card__media">
             <img
               src="assets/christmas-day-4x3.jpg"
@@ -174,7 +174,7 @@
           <p class="tile-card__role">ภาพฉากห้องตอนกลางวันของจริงที่อยู่ใน public/backgrounds ของ vivianlabs</p>
         </li>
 
-        <li class="tile-card tile-card--lilac" data-reveal>
+        <li class="tile-card tile-card--lilac" data-reveal style="--stagger:1">
           <div class="tile-card__media">
             <img
               src="assets/christmas-night-4x3.jpg"
@@ -188,7 +188,7 @@
           <p class="tile-card__role">ภาพฉากห้องตอนกลางคืนของจริง ไว้เปิดคุยชิลๆ หรือเปลี่ยนฉากเองได้</p>
         </li>
 
-        <li class="tile-card tile-card--sakura" data-reveal>
+        <li class="tile-card tile-card--sakura" data-reveal style="--stagger:2">
           <div class="tile-card__ui" data-ui>
             <p class="mini-ui__head">Vivian Memory State</p>
             <div class="mini-ui__stat"><span>Affinity Band</span><span>Close (68/100)</span></div>
@@ -200,7 +200,7 @@
           <p class="tile-card__role">เก็บความสนิทและความจำลง Supabase พร้อมจำกัด delta ต่อเทิร์นไม่ให้หลุดคาแรกเตอร์</p>
         </li>
 
-        <li class="tile-card tile-card--wisteria" data-reveal>
+        <li class="tile-card tile-card--wisteria" data-reveal style="--stagger:3">
           <div class="tile-card__ui" data-ui>
             <p class="mini-ui__head">Auth &amp; Voice Pipeline</p>
             <div class="mini-ui__stat"><span>Chat + Vision</span><span>Qwen 3.8 27B</span></div>
@@ -581,7 +581,7 @@
               <span>รันจาก GitHub repo vivianlabs (Node.js 22.13+)</span>
               <button type="button" class="local-copy-btn" id="copyLocalBtn">คัดลอกคำสั่ง</button>
             </div>
-            <pre class="local-box__code" id="localCmdBlock"><code>git clone https://github.com/celestia-sora/vivianlabs.git
+            <pre class="local-box__code" id="localCmdBlock" data-lenis-prevent><code>git clone https://github.com/celestia-sora/vivianlabs.git
 cd vivianlabs
 npm ci
 cp .env.example .env.local
@@ -695,6 +695,7 @@ DEV_BYPASS_LOGIN=true npm run dev</code></pre>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
   <script src="app.js" defer></script>
 </body>
 </html>
