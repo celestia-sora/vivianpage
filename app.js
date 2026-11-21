@@ -514,8 +514,13 @@
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-in');
-            observer.unobserve(entry.target);
+            const el = entry.target;
+            el.classList.add('is-in');
+            if (el.hasAttribute('data-lines')) {
+              const linesCount = el.querySelectorAll('.line').length || 1;
+              window.setTimeout(() => el.classList.add('is-settled'), 900 + linesCount * 90);
+            }
+            observer.unobserve(el);
           }
         }
       },
@@ -526,6 +531,6 @@
     lineHeadings.forEach((el) => observer.observe(el));
   } else {
     revealEls.forEach((el) => el.classList.add('is-in'));
-    lineHeadings.forEach((el) => el.classList.add('is-in'));
+    lineHeadings.forEach((el) => el.classList.add('is-in', 'is-settled'));
   }
 })();
