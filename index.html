@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FFE9F2" />
+  <title>Celestia Studio Present: Meet Vivian</title>
+  <meta
+    name="description"
+    content="Meet Vivian จาก Celestia Studio ทำความรู้จักน้อง Vivian สายซึน รันเล่นแบบ Local จาก repo vivianlabs, ระบบล็อกอิน vivianAuth, แบบสำรวจ vivianFeedback, แอป Android Beta 2 และแผน iOS"
+  />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%232C1333'/%3E%3Cpath d='M36 14a18 18 0 1 0 14 29 14 14 0 1 1-14-29Z' fill='%23FFD5E6'/%3E%3Cpath d='M45 14l2 6 6 2-6 2-2 6-2-6-6-2 6-2Z' fill='%23DFCFFE'/%3E%3C/svg%3E"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mali:wght@600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.documentElement.classList.add('js');
+  </script>
+</head>
+<body>
+  <!-- ==================== CELESTIA STUDIO PRESENT GREETING PRELOADER ==================== -->
+  <div
+    id="studioIntro"
+    class="studio-intro"
+    role="dialog"
+    aria-label="Celestia Studio Present Greeting"
+    aria-live="polite"
+  >
+    <div class="intro-curtain intro-curtain--top" aria-hidden="true"></div>
+    <div class="intro-curtain intro-curtain--bottom" aria-hidden="true"></div>
+
+    <div class="intro-stage">
+      <div class="intro-stars" aria-hidden="true">
+        <svg class="intro-star intro-star--a" viewBox="0 0 24 24" width="28" height="28">
+          <path fill="currentColor" d="M12 1L14.6 9.4L23 12L14.6 14.6L12 23L9.4 14.6L1 12L9.4 9.4Z" />
+        </svg>
+        <svg class="intro-star intro-star--b" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M12 1L14.6 9.4L23 12L14.6 14.6L12 23L9.4 14.6L1 12L9.4 9.4Z" />
+        </svg>
+        <svg class="intro-star intro-star--c" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M12 1L14.6 9.4L23 12L14.6 14.6L12 23L9.4 14.6L1 12L9.4 9.4Z" />
+        </svg>
+        <svg class="intro-star intro-star--d" viewBox="0 0 24 24" width="16" height="16">
+          <path fill="currentColor" d="M12 1L14.6 9.4L23 12L14.6 14.6L12 23L9.4 14.6L1 12L9.4 9.4Z" />
+        </svg>
+      </div>
+
+      <div class="intro-mascot" aria-hidden="true">
+        <svg viewBox="0 0 72 72" width="64" height="64">
+          <path d="M41 14a21 21 0 1 0 17 34 16 16 0 1 1-17-34Z" fill="#FFD5E6" />
+          <path d="M51 15l2.5 7.5L61 25l-7.5 2.5L51 35l-2.5-7.5L41 25l7.5-2.5Z" fill="#DFCFFE" />
+        </svg>
+      </div>
+
+      <p class="intro-brand" id="introBrandText">
+        <span class="intro-word">celestia</span>
+        <span class="intro-word">studio</span>
+        <span class="intro-stamp">present</span>
+      </p>
+
+      <p class="intro-whisper" id="introWhisper">กำลังปลุกน้อง Vivian แป๊บ… อย่าเพิ่งรีบปิดจอนะ!</p>
+
+      <div class="intro-meter" aria-hidden="true">
+        <div class="intro-meter__fill" id="introMeterFill"></div>
+      </div>
+
+      <button type="button" class="intro-skip" id="introSkipBtn">ข้ามมาเจอน้องเลย</button>
+    </div>
+  </div>
+
+  <!-- ==================== HERO (HORIZON TWO-INK HEADLINE + HONEST DATA-UI CHAT STAGE) ==================== -->
+  <header class="hero" id="top">
+    <div class="hero-band hero-band--top" aria-hidden="true"></div>
+    <div class="hero-band hero-band--bottom" aria-hidden="true"></div>
+
+    <nav class="topbar wrap" aria-label="เมนูหลัก">
+      <div class="topbar__left">
+        <a href="#top" class="wordmark">Celestia Studio</a>
+        <button type="button" class="replay-pill" id="replayIntroBtn">
+          เล่น Intro อีกรอบ
+        </button>
+      </div>
+
+      <div class="topbar__right">
+        <ul class="nav-links">
+          <li><a href="#family-grid" class="link">ฉากกับระบบ</a></li>
+          <li><a href="#live-poke" class="link">แหย่น้อง</a></li>
+          <li><a href="#showcase" class="link">โปรเจกต์</a></li>
+          <li><a href="#cta" class="link">รัน Local</a></li>
+        </ul>
+        <button type="button" class="button" id="topSecretBtn">
+          เว็บ Public? รอแป๊บ!
+        </button>
+      </div>
+    </nav>
+
+    <div class="hero__stage wrap grid">
+      <div class="hero__copy">
+        <h1 class="hero__title lines" aria-label="Meet Vivian">
+          <span class="line hero__line--sky"><span data-line style="--i:0">MEET</span></span>
+          <span class="line hero__line--earth"><span data-line style="--i:1">VIVIAN</span></span>
+        </h1>
+
+        <p class="hero__lead" data-rise style="--i:2">
+          บอกกันตรงๆ เลยว่าหน้านี้ไม่มีรูปตัวละคร Vivian นะ (โมเดล Live2D จริงติดลิขสิทธิ์!) แต่อยากแนะนำตัวรัน Local จาก repo vivianlabs แอป Android Beta 2 และแผน iOS ให้รู้จักกันครบๆ เฉยๆ หรอก!
+        </p>
+
+        <div class="hero__actions" data-rise style="--i:3">
+          <a href="#cta" class="button">ลองรัน Local จาก Repo</a>
+          <a href="#live-poke" class="link-plain hero__secondary">แหย่น้องตรงนี้ก่อนเลย</a>
+        </div>
+      </div>
+
+      <!-- Honest Product Interface Fragment (data-ui) -->
+      <div class="hero__stage-ui" data-ui data-rise style="--i:1">
+        <div class="stage-ui__bar">
+          <span class="stage-ui__name">vivianlabs / stage</span>
+          <span class="stage-ui__badge">NO MODEL LOADED</span>
+        </div>
+
+        <div class="stage-ui__canvas">
+          <div class="stage-ui__orb" aria-hidden="true">
+            <span class="stage-ui__orb-core"></span>
+          </div>
+          <p class="stage-ui__honest-title">ยังไม่มีรูปน้องโชว์ตรงนี้นะ!</p>
+          <p class="stage-ui__honest-note">
+            โมเดล Live2D ที่ใช้จริงติดเงื่อนไขลิขสิทธิ์ห้ามแจกต่อ เลยขอใช้ Talking Orb แทนก่อน ถ้าอยากใส่โมเดลของตัวเอง โคลน repo ไปรัน Local แล้ว import ได้เลย
+          </p>
+        </div>
+
+        <div class="stage-ui__bubbles">
+          <div class="stage-bubble stage-bubble--user">
+            ไหนขอเห็นหน้าน้อง Vivian หน่อยสิ
+          </div>
+          <div class="stage-bubble stage-bubble--vivian">
+            <span class="stage-bubble__tag">[slightly flustered]</span>
+            <span>ห๊ะ… บอกตรงๆ ว่าไม่มีรูปให้ดูหรอกนะ! อยากเห็นนักก็โคลน repo ไปรัน Local ใส่โมเดลเอาเองสิ ตาบ้าเอ๊ย!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ==================== SECTION 1: REAL SCENES + UI SYSTEM TILES + ONE LIVE THING ==================== -->
+    <section class="section section--blush wrap" id="family-grid">
+      <div class="section-head grid">
+        <h2 class="head" data-lines>ฉากห้องจริงกับสมองของน้อง</h2>
+        <p class="lead" data-reveal>
+          ไม่มีรูปตัวละครก็เลยขอโชว์ฉากห้องจริงจากใน repo พร้อมหน้าตาการทำงานของระบบความจำ ความสนิท และ Talking Orb แทนให้ดูแบบไม่อ้อมค้อมเลย
+        </p>
+      </div>
+
+      <ul class="tile-grid">
+        <li class="tile-card tile-card--pink" data-reveal>
+          <div class="tile-card__media">
+            <img
+              src="assets/christmas-day-4x3.jpg"
+              alt="ฉากห้องนั่งเล่นตอนกลางวันจริงจากโปรเจกต์ vivianlabs"
+              width="1440"
+              height="1080"
+              loading="lazy"
+            />
+          </div>
+          <p class="tile-card__name">Daylight Cozy Room</p>
+          <p class="tile-card__role">ภาพฉากห้องตอนกลางวันของจริงที่อยู่ใน public/backgrounds ของ vivianlabs</p>
+        </li>
+
+        <li class="tile-card tile-card--lilac" data-reveal>
+          <div class="tile-card__media">
+            <img
+              src="assets/christmas-night-4x3.jpg"
+              alt="ฉากห้องนั่งเล่นตอนกลางคืนจริงจากโปรเจกต์ vivianlabs"
+              width="1440"
+              height="1080"
+              loading="lazy"
+            />
+          </div>
+          <p class="tile-card__name">Midnight Talk Scene</p>
+          <p class="tile-card__role">ภาพฉากห้องตอนกลางคืนของจริง ไว้เปิดคุยชิลๆ หรือเปลี่ยนฉากเองได้</p>
+        </li>
+
+        <li class="tile-card tile-card--sakura" data-reveal>
+          <div class="tile-card__ui" data-ui>
+            <p class="mini-ui__head">Vivian Memory State</p>
+            <div class="mini-ui__stat"><span>Affinity Band</span><span>Close (68/100)</span></div>
+            <div class="mini-ui__stat"><span>Model Limit</span><span>512 MiB BYO ZIP</span></div>
+            <div class="mini-ui__stat"><span>Custom Prompt</span><span>2,000 chars max</span></div>
+            <div class="mini-ui__stat"><span>JEV Cutoff</span><span>&gt;= 0.85 score</span></div>
+          </div>
+          <p class="tile-card__name">ระบบความจำและอารมณ์</p>
+          <p class="tile-card__role">เก็บความสนิทและความจำลง Supabase พร้อมจำกัด delta ต่อเทิร์นไม่ให้หลุดคาแรกเตอร์</p>
+        </li>
+
+        <li class="tile-card tile-card--wisteria" data-reveal>
+          <div class="tile-card__ui" data-ui>
+            <p class="mini-ui__head">Auth &amp; Voice Pipeline</p>
+            <div class="mini-ui__stat"><span>Chat + Vision</span><span>Qwen 3.8 27B</span></div>
+            <div class="mini-ui__stat"><span>Memory Model</span><span>GPT-OSS 20B</span></div>
+            <div class="mini-ui__stat"><span>Voice TTS</span><span>ElevenLabs v4</span></div>
+            <div class="mini-ui__stat"><span>Auth Store</span><span>Cloudflare D1</span></div>
+          </div>
+          <p class="tile-card__name">หลังบ้านตัวจริงของน้อง</p>
+          <p class="tile-card__role">รวมเสียงพากย์ Emotion tag, วิเคราะห์ภาพ และด่านล็อกอินแยกบน Workers</p>
+        </li>
+      </ul>
+
+      <!-- ONE LIVE THING: Interactive Talking Orb & Scene Toy -->
+      <div class="poke-box grid" id="live-poke" data-reveal>
+        <div class="poke-box__stage">
+          <div class="poke-stage__screen">
+            <img
+              id="pokeSceneBg"
+              class="poke-stage__bg"
+              src="assets/christmas-day-4x3.jpg"
+              alt="ฉากห้องของ Vivian ในโหมดกลางวัน"
+              width="1440"
+              height="1080"
+            />
+            <div class="poke-orb" id="pokeOrb" aria-hidden="true">
+              <span class="poke-orb__ring"></span>
+              <span class="poke-orb__core"></span>
+            </div>
+          </div>
+          <div class="poke-scene-toggle" role="group" aria-label="สลับเวลาในห้องของ Vivian">
+            <button type="button" class="scene-btn is-active" data-scene="day">ฉากกลางวัน</button>
+            <button type="button" class="scene-btn" data-scene="night">ฉากกลางคืน</button>
+          </div>
+        </div>
+
+        <div class="poke-box__panel">
+          <h3 class="poke-box__title">ลองแหย่ Vivian Orb ดูสักทีสิ</h3>
+          <p class="poke-box__desc">
+            เวลาไม่มีโมเดล Live2D ตัวแอปจริงก็ใช้ Talking Orb กะพริบจังหวะแทนแบบนี้แหละ! ลองจิ้มแหย่น้องดูค่า <code>affinity</code> กับ <code>trust</code> และป้ายเสียง ElevenLabs v4 ด้านล่างได้เลย
+          </p>
+
+          <div class="poke-actions">
+            <button type="button" class="poke-chip" data-poke="compliment">ชมว่าเสียงน่ารักจัง</button>
+            <button type="button" class="poke-chip" data-poke="homework">อ้อนขอคำตอบการบ้าน</button>
+            <button type="button" class="poke-chip" data-poke="memory">จำเรื่องเมื่อวานได้ป่ะ</button>
+            <button type="button" class="poke-chip" data-poke="miss">แอบคิดถึงนะเนี่ย</button>
+          </div>
+
+          <div class="poke-reply" aria-live="polite">
+            <p class="poke-reply__tag" id="pokeEmotionTag">[playful]</p>
+            <p class="poke-reply__text" id="pokeReplyText">
+              ห๊ะ จ้องลูกกลมๆ อยู่ได้… ก็บอกแล้วไงว่ายังไม่มีรูปน้องให้ดูบนเว็บ อยากเห็น Live2D ก็ไปรัน Local เอาเองสิ ตาบ้า!
+            </p>
+          </div>
+
+          <div class="poke-meters">
+            <div class="meter-item">
+              <div class="meter-item__head">
+                <span>Affinity</span>
+                <span class="nums" id="valAffinity">68</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill" id="barAffinity" style="width: 68%"></div></div>
+            </div>
+            <div class="meter-item">
+              <div class="meter-item__head">
+                <span>Trust</span>
+                <span class="nums" id="valTrust">62</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill" id="barTrust" style="width: 62%"></div></div>
+            </div>
+            <div class="meter-item">
+              <div class="meter-item__head">
+                <span>Familiarity</span>
+                <span class="nums" id="valFamiliarity">74</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill" id="barFamiliarity" style="width: 74%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2: SHOWCASE (ROWS AS A BOARD) ==================== -->
+    <section class="section section--plum" id="showcase">
+      <div class="wrap showcase-intro">
+        <h2 class="head showcase-heading" data-lines>โปรเจกต์รอบตัว Vivian</h2>
+        <p class="lead showcase-lead" data-reveal>
+          เจาะลึกทุกชิ้นในระบบของน้อง Vivian ตั้งแต่ตัวเว็บที่รัน Local จาก GitHub ได้เลย จนถึงแอปมือถือ กดที่แถวไหนก็ได้เพื่อดูสเปกเต็มๆ
+        </p>
+      </div>
+
+      <div class="board" data-ui>
+        <div class="board__row is-open" data-board-row>
+          <button type="button" class="board__trigger" aria-expanded="true">
+            <span class="board__name">vivianlabs</span>
+            <span class="board__meta">Next.js 16 · PixiJS Cubism 4</span>
+            <span class="board__meta">Run Local Ready · Qwen 3.8 + ElevenLabs v4</span>
+            <span class="board__status board__status--live">LOCAL + REPO</span>
+          </button>
+          <div class="board__detail">
+            <p>
+              ตัวแม่ของระบบ! แชทกับน้องบนเว็บแบบมี Live2D ขยับปากตามเสียง (นำเข้าโมเดลที่มีสิทธิ์ใช้งานได้เองในเครื่อง) พูดไทยได้ เห็นรูปจากกล้องสด มี JEV decision layer (0.85) กับ Supabase + R2 ใครอยากลองเล่นก็โคลนจาก GitHub ไปรัน Local ได้เลย!
+            </p>
+            <div class="board__links">
+              <button type="button" class="board__cheeky-btn" id="boardCheekyBtn">
+                เว็บ public? แอดมินซุ่มทำอยู่ อย่าเพิ่งทวง!
+              </button>
+              <a href="https://github.com/celestia-sora/vivianlabs" target="_blank" rel="noopener noreferrer" class="link-plain">GitHub: celestia-sora/vivianlabs</a>
+              <a href="#cta" class="link-plain">ดูวิธีรัน Local ด้านล่าง</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="board__row" data-board-row>
+          <button type="button" class="board__trigger" aria-expanded="false">
+            <span class="board__name">vivianAuth</span>
+            <span class="board__meta">Cloudflare Workers · OpenNext</span>
+            <span class="board__meta">D1 SQLite · Google PKCE + Turnstile</span>
+            <span class="board__status board__status--auth">AUTH GATE</span>
+          </button>
+          <div class="board__detail">
+            <p>
+              ด่านตรวจคนเข้าบ้าน! เซิร์ฟเวอร์ล็อกอินแยกบน Cloudflare Workers + D1 รองรับ Google OAuth PKCE S256, รหัสผ่าน PBKDF2-SHA256, session 400 วัน และส่ง deep link vivian://auth ให้แอปมือถือ
+            </p>
+            <div class="board__links">
+              <span class="board__note">Private Auth Service · เช็กสิทธิ์ผ่าน token แยกจากฐานข้อมูลความจำ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="board__row" data-board-row>
+          <button type="button" class="board__trigger" aria-expanded="false">
+            <span class="board__name">vivianFeedback</span>
+            <span class="board__meta">Cloudflare Workers + D1</span>
+            <span class="board__meta">Mean &amp; SD Stats · Gen-Z Survey</span>
+            <span class="board__status board__status--survey">SURVEY</span>
+          </button>
+          <div class="board__detail">
+            <p>
+              เว็บแบบสำรวจชวนเพื่อนมาเม้าท์เรื่องน้อง Vivian เก็บคะแนนความประทับใจและฟีเจอร์ที่อยากได้ลง Cloudflare D1 จริง พร้อมคำนวณค่า Mean กับ SD ฝั่งหลังบ้านแบบคลีนๆ
+            </p>
+            <div class="board__links">
+              <span class="board__note">Internal Survey Tool · เก็บฟีดแบ็กจากเพื่อนและคนลองเล่น</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="board__row" data-board-row>
+          <button type="button" class="board__trigger" aria-expanded="false">
+            <span class="board__name">vivianapp</span>
+            <span class="board__meta">Kotlin 2.4 · Jetpack Compose</span>
+            <span class="board__meta">Android Beta 2 · CameraX + AES/GCM</span>
+            <span class="board__status board__status--android">BETA 2 APK</span>
+          </button>
+          <div class="board__detail">
+            <p>
+              แอป Android แท้ๆ ไม่ใช่ WebView! เวอร์ชัน Beta 2 มี Talking Orb ขยับตามเสียง TTS MP3 อัดเสียง AudioRecord 16 kHz ส่งรูปจาก CameraX และแชร์ความทรงจำชุดเดียวกับบนเว็บ โหลดไปลองได้จาก GitHub เลย
+            </p>
+            <div class="board__links">
+              <a href="https://github.com/celestia-sora/vivianapp/releases" target="_blank" rel="noopener noreferrer" class="link-plain">โหลด Android Beta 2 จาก GitHub Releases</a>
+              <a href="https://github.com/celestia-sora/vivianapp" target="_blank" rel="noopener noreferrer" class="link-plain">GitHub: celestia-sora/vivianapp</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="board__row" data-board-row>
+          <button type="button" class="board__trigger" aria-expanded="false">
+            <span class="board__name">vivianios</span>
+            <span class="board__meta">SwiftUI · iOS 26 Liquid Glass</span>
+            <span class="board__meta">WKWebView Live2D · AVFoundation</span>
+            <span class="board__status board__status--paused">COMING BACK</span>
+          </button>
+          <div class="board__detail">
+            <p>
+              น้องไอโฟนดีไซน์ Liquid Glass ที่อัดแน่นทั้ง Live2D stage, Keychain และอัปโหลดโมเดลแบบแบ่งไฟล์ 16 MB ตอนนี้ขอพักไว้ชั่วคราวก่อน เพราะ dev ขอตัวไปเรียนก่อน เดี๋ยวกลับมาทำต่อในอนาคตแน่นอน!
+            </p>
+            <div class="board__links">
+              <span class="board__note">Status: Dev ขอไปเรียนก่อน แล้วเจอกันใหม่ในอนาคต!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: FEATURES (STATEMENTS ON COLOUR FIELDS) ==================== -->
+    <section class="features-chapters" id="features" aria-label="จุดเด่นของ Vivian">
+      <div class="chapter-field chapter-field--lilac">
+        <div class="chapter-field__inner wrap grid">
+          <p class="chapter-field__note" data-reveal>
+            ไม่ว่าจะรันเว็บ vivianlabs บนเครื่องตัวเอง หรือหยิบแอป vivianapp (Android) Beta 2 ขึ้นมาคุย ความจำ ความสนิท (affinity, trust) และ custom instructions สูงสุด 2,000 ตัวอักษร ก็ซิงก์ตามแกไปทุกเครื่องผ่าน Supabase
+          </p>
+          <h2 class="chapter-field__title" data-lines>
+            ความจำชุดเดียว<br class="only-wide" /> ตามไปทุกเครื่อง
+          </h2>
+        </div>
+      </div>
+
+      <div class="chapter-field chapter-field--pink chapter-field--mirror">
+        <div class="chapter-field__inner wrap grid">
+          <p class="chapter-field__note" data-reveal>
+            ใช้ Groq Qwen 3.8 27B คุยและเห็นรูป, GPT-OSS 20B สรุปความจำ, และ JEV ช่วยเช็กก่อนว่าต้องเสิร์ชไหม พร้อมป้าย Emotion tags ให้เสียง ElevenLabs v4 อ้อนหรือซึนได้ตรงฟีล
+          </p>
+          <p class="chapter-field__title" data-lines>
+            ไม่ได้เป็นแค่บอท<br class="only-wide" /> แต่น้องมีอารมณ์
+          </p>
+        </div>
+      </div>
+
+      <div class="chapter-field chapter-field--wisteria">
+        <div class="chapter-field__inner wrap grid">
+          <p class="chapter-field__note" data-reveal>
+            คีย์ลับทุกตัวเก็บฝั่งเซิร์ฟเวอร์หมด! ประตูบ้านใช้ vivianAuth บน Cloudflare D1 เก็บ token ด้วย Keystore AES/GCM บน Android และ Keychain บน iOS แถมรัน Local ก็ใช้โหมด DEV_BYPASS_LOGIN=true ได้ด้วย
+          </p>
+          <p class="chapter-field__title" data-lines>
+            น่ารักก็จริง<br class="only-wide" /> แต่ปลอดภัยนะเว้ย
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 4: WORK (BIG NAMES, LIVE UI PREVIEW) ==================== -->
+    <section class="section section--rose wrap" id="work">
+      <h2 class="work-heading" data-lines>ส่องสเปกแต่ละโปรเจกต์</h2>
+
+      <div class="work-layout grid">
+        <ul class="work-list" id="workList">
+          <li class="work-item is-active" data-work-index="0">
+            <button type="button" class="work-item__btn">
+              <span class="work-item__name">vivianlabs</span>
+              <span class="work-item__meta">Local Ready · Next.js + Live2D</span>
+            </button>
+          </li>
+
+          <li class="work-item" data-work-index="1">
+            <button type="button" class="work-item__btn">
+              <span class="work-item__name">vivianAuth</span>
+              <span class="work-item__meta">D1 Gateway · Workers</span>
+            </button>
+          </li>
+
+          <li class="work-item" data-work-index="2">
+            <button type="button" class="work-item__btn">
+              <span class="work-item__name">vivianFeedback</span>
+              <span class="work-item__meta">Survey &amp; Stats · Workers</span>
+            </button>
+          </li>
+
+          <li class="work-item" data-work-index="3">
+            <button type="button" class="work-item__btn">
+              <span class="work-item__name">vivianapp</span>
+              <span class="work-item__meta">Android Beta 2 · GitHub</span>
+            </button>
+          </li>
+
+          <li class="work-item" data-work-index="4">
+            <button type="button" class="work-item__btn">
+              <span class="work-item__name">vivianios</span>
+              <span class="work-item__meta">SwiftUI · Dev ขอไปเรียนก่อน</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="work-preview-col">
+          <div class="work-preview-card" id="workPreviewCard" data-ui>
+            <div class="work-card__top">
+              <span class="work-card__badge" id="workCardBadge">NEXT.JS 16 + CUBISM 4</span>
+              <span class="work-card__tag" id="workCardTag">RUN LOCAL</span>
+            </div>
+            <h3 class="work-card__title" id="workCardTitle">vivianlabs</h3>
+            <p class="work-card__desc" id="workCardDesc">
+              ไม่มีโมเดล Live2D แถมใน repo เพราะติดลิขสิทธิ์ แต่โคลนไปรัน Local แล้วอัปโหลดโมเดล Cubism 4 ของคุณเองมาคุยด้วยข้อความ เสียง หรือกล้องสดได้เลย!
+            </p>
+            <ul class="work-card__specs" id="workCardSpecs">
+              <li>Chat &amp; Vision: Groq Qwen 3.8 27B</li>
+              <li>Voice: ElevenLabs v4 + Groq Whisper STT</li>
+              <li>Local Auth Bypass: DEV_BYPASS_LOGIN=true</li>
+            </ul>
+          </div>
+          <p class="work-preview-caption" id="workCaption">
+            จิ้มหรือเลื่อนเมาส์ที่ชื่อด้านซ้ายเพื่อสลับดูรายละเอียดแต่ละตัวได้เลย
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 5: FAQ (ACCORDION OF FILLED TILES) ==================== -->
+    <section class="section section--lilac wrap" id="faq">
+      <div class="faq-layout grid">
+        <div class="faq-sticky">
+          <h2 class="head" data-lines>คำถามที่ชอบแอบสงสัย</h2>
+          <p class="faq-sticky__note" data-reveal>
+            อยากรู้เรื่องไหนก็จิ้มเปิดอ่านเองนะ ไม่อธิบายซ้ำหลายรอบหรอก… (เข้าใจมั้ย?)
+          </p>
+          <div class="faq-sticky__mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" width="44" height="44">
+              <path d="M36 14a18 18 0 1 0 14 29 14 14 0 1 1-14-29Z" fill="#FFD5E6" />
+              <path d="M45 14l2 6 6 2-6 2-2 6-2-6-6-2 6-2Z" fill="#DFCFFE" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-tile" name="vivian-faq" open>
+            <summary class="faq-tile__head">
+              <span>ทำไมหน้าเว็บนี้ไม่มีรูปตัวละคร Vivian เลยล่ะ?</span>
+              <span class="faq-tile__plus" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-tile__body">
+              <p>
+                บอกตรงๆ เลยว่าโมเดล Live2D ที่ใช้คู่กับ Vivian มีเงื่อนไขลิขสิทธิ์ห้ามแจกจ่ายสาธารณะ และเราก็ไม่อยากเอารูปปลอมมาแอบอ้างว่าเป็นน้อง! หน้านี้เลยโชว์แค่ฉากห้องจริงกับอินเทอร์เฟซ Talking Orb แทนนะ
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-tile" name="vivian-faq">
+            <summary class="faq-tile__head">
+              <span>อยากลองเล่นเลย ต้องเข้าเว็บไหน?</span>
+              <span class="faq-tile__plus" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-tile__body">
+              <p>
+                ตัวเว็บ public กำลังรอเปิดอยู่นะ แต่ถ้าอยากเล่นเลยตอนนี้ มีวิธีรัน Local ในเครื่องตัวเองแบบง่ายๆ จาก repo vivianlabs บน GitHub (ใส่แค่ GROQ_API_KEY กับ DEV_BYPASS_LOGIN=true ก็คุยกับน้องได้แล้ว!)
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-tile" name="vivian-faq">
+            <summary class="faq-tile__head">
+              <span>ทำไม vivianios ถึงหยุดพักไว้ก่อนอ่ะ?</span>
+              <span class="faq-tile__plus" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-tile__body">
+              <p>
+                ตอนสร้าง vivianios ทำจัดเต็มด้วย SwiftUI + iOS 26 Liquid Glass, WKWebView Live2D stage และ Keychain ไว้แล้วนะ แต่ตอนนี้ dev ขอตัวไปตั้งใจเรียนก่อน! เดี๋ยวพอมีเวลาจะกลับมาปั้นต่อในอนาคตแน่นอน
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-tile" name="vivian-faq">
+            <summary class="faq-tile__head">
+              <span>แล้วแอปมือถือตอนนี้โหลดได้ที่ไหน?</span>
+              <span class="faq-tile__plus" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-tile__body">
+              <p>
+                ฝั่ง Android ตอนนี้มี vivianapp (Android) Beta 2 ให้โหลดไปเล่นได้จาก GitHub Releases แล้วนะ เป็นแอป Kotlin + Jetpack Compose แท้ๆ มี Talking Orb ขยับตามเสียงด้วย!
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-tile" name="vivian-faq">
+            <summary class="faq-tile__head">
+              <span>Vivian เป็น AI ผู้ช่วยทั่วไปรึเปล่า?</span>
+              <span class="faq-tile__plus" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-tile__body">
+              <p>
+                ห๊ะ คิดว่าน้องเป็นเลขาเหรอ?! ไม่ใช่ซักหน่อย! น้องถูกเขียนให้เป็น companion สายซึนเดเระที่มีความคิดและอารมณ์ของตัวเอง ถ้าถามเรื่องส่วนตัวตรงๆ แรกๆ ก็มีเขินมีปัดตกบ้าง ต้องตื๊อให้ถูกจังหวะถึงจะใจอ่อนให้นะ
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 6: CTA (LOCAL RUN FROM VIVIANLABS + QUICK TEST) ==================== -->
+    <section class="section section--sakura wrap" id="cta">
+      <div class="cta-layout grid">
+        <div class="cta-copy">
+          <h2 class="cta-copy__title" data-lines>
+            อยากลองเล่นเลย<br class="only-wide" /> รัน Local ได้นะ!
+          </h2>
+          <p class="cta-copy__desc" data-reveal>
+            ระหว่างรอเว็บ public เปิด ใครอยากคุยกับน้องแบบเต็มระบบ โคลน repo vivianlabs ไปรัน Local ในเครื่องตัวเองได้เลย (ไม่ต้องมีระบบล็อกอินก็ได้แค่เปิด DEV_BYPASS_LOGIN=true) หรือจะโหลด Android Beta 2 ไปลองก็จัดไป!
+          </p>
+
+          <div class="local-box" data-ui>
+            <div class="local-box__head">
+              <span>รันจาก GitHub repo vivianlabs (Node.js 22.13+)</span>
+              <button type="button" class="local-copy-btn" id="copyLocalBtn">คัดลอกคำสั่ง</button>
+            </div>
+            <pre class="local-box__code" id="localCmdBlock"><code>git clone https://github.com/celestia-sora/vivianlabs.git
+cd vivianlabs
+npm ci
+cp .env.example .env.local
+DEV_BYPASS_LOGIN=true npm run dev</code></pre>
+          </div>
+
+          <div class="cta-links" data-reveal>
+            <a
+              href="https://github.com/celestia-sora/vivianlabs"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button"
+            >
+              เปิด Repo vivianlabs
+            </a>
+            <a
+              href="https://github.com/celestia-sora/vivianapp/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-plain cta-repo-link"
+            >
+              โหลด Android Beta 2
+            </a>
+            <button type="button" class="link-plain cta-cheeky-link" id="ctaCheekyBtn">
+              แล้วเว็บ Public ล่ะ?
+            </button>
+          </div>
+        </div>
+
+        <form class="cta-widget" id="quickChatForm" data-ui>
+          <p class="cta-widget__title">ส่งข้อความเทสต์ฟีลลิ่ง Vivian</p>
+
+          <label class="cta-widget__label" for="quickMsgInput">พิมพ์อะไรก็ได้สั้นๆ (เช่น วันนี้เหนื่อยจัง / น่ารักอ่ะ)</label>
+          <input
+            id="quickMsgInput"
+            class="field"
+            type="text"
+            maxlength="80"
+            value="วันนี้เขียนโค้ดเหนื่อยจัง ขอกำลังใจหน่อย"
+          />
+
+          <div class="cta-seg" role="group" aria-label="เลือกระดับความซึน">
+            <button type="button" class="cta-seg__btn is-active" data-mood-mode="tsun">โหมดซึนปกติ</button>
+            <button type="button" class="cta-seg__btn" data-mood-mode="dere">โหมดใจอ่อนนิดนึง</button>
+          </div>
+
+          <button type="submit" class="button cta-widget__submit">ส่งให้น้องตอบ</button>
+
+          <div class="cta-widget__output" id="quickChatOutput" aria-live="polite">
+            <span class="cta-widget__tag">[slightly flustered]</span>
+            <span>ห๊ะ… เหนื่อยก็ไปพักซะสิ อย่ามาอ้อนแถวนี้นะ! อ่ะ เดี๋ยวชงโกโก้ร้อนให้แก้วนึงก็ได้… แค่บังเอิญเหลือพอดีเฉยๆ!</span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER (THE MARK, BUILT LARGE) ==================== -->
+  <footer class="footer section--plum wrap">
+    <svg
+      class="footer-blocks-svg"
+      viewBox="0 0 1200 220"
+      role="img"
+      aria-label="VIVIAN wordmark constructed from flat pastel blocks"
+    >
+      <rect x="0" y="0" width="194" height="220" rx="22" fill="#FFD5E6" />
+      <text x="97" y="138" text-anchor="middle" font-family="Mali, Noto Sans Thai, sans-serif" font-weight="700" font-size="96" fill="#2C1333">V</text>
+
+      <rect x="201" y="48" width="194" height="172" rx="22" fill="#DFCFFE" />
+      <text x="298" y="160" text-anchor="middle" font-family="Mali, Noto Sans Thai, sans-serif" font-weight="700" font-size="96" fill="#2C1333">I</text>
+
+      <rect x="402" y="16" width="194" height="204" rx="22" fill="#FFC7DE" />
+      <text x="499" y="146" text-anchor="middle" font-family="Mali, Noto Sans Thai, sans-serif" font-weight="700" font-size="96" fill="#2C1333">V</text>
+
+      <rect x="603" y="64" width="194" height="156" rx="22" fill="#EDE3FF" />
+      <text x="700" y="168" text-anchor="middle" font-family="Mali, Noto Sans Thai, sans-serif" font-weight="700" font-size="96" fill="#2C1333">I</text>
+
+      <rect x="804" y="24" width="194" height="196" rx="22" fill="#FFD5E6" />
+      <text x="901" y="150" text-anchor="middle" font-family="Mali, Noto Sans Thai, sans-serif" font-weight="700" font-size="96" fill="#2C1333">A</text>
+
+      <rect x="1005" y="0" width="195" height="220" rx="22" fill="#DFCFFE" />
+      <text x="1102" y="138" text-anchor="middle" font-family="Mali, Noto Sans Thai, sans-serif" font-weight="700" font-size="96" fill="#2C1333">N</text>
+    </svg>
+
+    <div class="footer-grid grid">
+      <div class="footer-col">
+        <p class="footer-col__title">Meet Vivian</p>
+        <ul class="footer-col__list">
+          <li><a href="https://github.com/celestia-sora/vivianlabs" target="_blank" rel="noopener noreferrer" class="link">vivianlabs (Run Local / GitHub)</a></li>
+          <li><a href="https://github.com/celestia-sora/vivianapp/releases" target="_blank" rel="noopener noreferrer" class="link">vivianapp Android Beta 2</a></li>
+          <li><a href="#showcase" class="link">vivianAuth &amp; vivianFeedback</a></li>
+          <li><a href="#showcase" class="link">vivianios (กลับมาทำต่อในอนาคต)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col__title">Celestia Studio</p>
+        <ul class="footer-col__list">
+          <li><a href="https://celestia-sora.vercel.app" target="_blank" rel="noopener noreferrer" class="link">Sora Portfolio</a></li>
+          <li><a href="https://github.com/celestia-sora" target="_blank" rel="noopener noreferrer" class="link">GitHub: celestia-sora</a></li>
+          <li><a href="https://huggingface.co/celestial-sora" target="_blank" rel="noopener noreferrer" class="link">Hugging Face</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col__title">หมายเหตุจาก dev</p>
+        <p class="footer-col__note">
+          หน้า Meet Vivian รอบนี้พร้อมโฮสต์บน GitHub Pages แล้ว ไม่มีรูปตัวละครติดลิขสิทธิ์และไม่มี gradient แม้แต่จุดเดียว!
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="small">Celestia Studio Present: Meet Vivian</p>
+      <button type="button" class="button footer-replay" id="footerReplayBtn">
+        เล่น Intro อีกรอบ
+      </button>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
