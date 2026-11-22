@@ -134,9 +134,19 @@
         </div>
 
         <div class="stage-ui__canvas">
-          <div class="stage-ui__orb" aria-hidden="true">
-            <span class="stage-ui__orb-core"></span>
-          </div>
+          <button
+            type="button"
+            class="siri-orb-btn"
+            id="heroOrb"
+            data-orb-state="idle"
+            aria-label="Vivian Talking Orb (SmoothUI SiriOrb) — กดเพื่อทักทายน้อง"
+          >
+            <span class="siri-orb-bloom" aria-hidden="true"></span>
+            <span class="siri-orb" aria-hidden="true">
+              <span class="siri-orb-layer siri-orb-sheen"></span>
+              <span class="siri-orb-layer siri-orb-rim"></span>
+            </span>
+          </button>
           <p class="stage-ui__honest-title">ยังไม่มีรูปน้องโชว์ตรงนี้นะ!</p>
           <p class="stage-ui__honest-note">
             โมเดล Live2D ที่ใช้จริงติดเงื่อนไขลิขสิทธิ์ห้ามแจกต่อ เลยขอใช้ Talking Orb แทนก่อน ถ้าอยากใส่โมเดลของตัวเอง โคลน repo ไปรัน Local แล้ว import ได้เลย
@@ -232,10 +242,19 @@
               width="1440"
               height="1080"
             />
-            <div class="poke-orb" id="pokeOrb" aria-hidden="true">
-              <span class="poke-orb__ring"></span>
-              <span class="poke-orb__core"></span>
-            </div>
+            <button
+              type="button"
+              class="siri-orb-btn siri-orb-btn--poke"
+              id="pokeOrb"
+              data-orb-state="idle"
+              aria-label="แหย่ Vivian SiriOrb"
+            >
+              <span class="siri-orb-bloom" aria-hidden="true"></span>
+              <span class="siri-orb" aria-hidden="true">
+                <span class="siri-orb-layer siri-orb-sheen"></span>
+                <span class="siri-orb-layer siri-orb-rim"></span>
+              </span>
+            </button>
           </div>
           <div class="poke-scene-toggle" role="group" aria-label="สลับเวลาในห้องของ Vivian">
             <button type="button" class="scene-btn is-active" data-scene="day">ฉากกลางวัน</button>

@@ -716,21 +716,186 @@ p {
   gap: 0.75rem;
 }
 
-.stage-ui__orb {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  background: var(--field-wisteria);
-  display: grid;
-  place-items: center;
-  animation: orb-breathe 3.6s ease-in-out infinite;
+/* ==========================================================================
+   SMOOTHUI REAL SIRI-ORB (VANILLA PORT OF npx smoothui-cli add siri-orb)
+   ========================================================================== */
+@property --siri-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
 }
 
-.stage-ui__orb-core {
-  width: 2.5rem;
-  height: 2.5rem;
+.siri-orb-btn {
+  --orb-size: 108px;
+  --animation-duration: 33.3s;
+  --drift-duration: 15s;
+  --bg: oklch(92% 0.03 300);
+  --c1: oklch(68% 0.21 350);
+  --c2: oklch(70% 0.18 210);
+  --c3: oklch(66% 0.2 285);
+  --c4: oklch(72% 0.19 325);
+  --glow-color: oklch(72% 0.2 280);
+  --glow-opacity: 0.12;
+  --orb-scale: 0.94;
+  --orb-sat: 0.78;
+  --orb-hue: 0deg;
+  --blur-amount: 4px;
+  --contrast-amount: 1.5;
+  --dot-size: 0.9px;
+  --shadow-spread: 2px;
+  --mask-radius: 25%;
+  --rim: 6.4px;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: var(--orb-size);
+  height: var(--orb-size);
   border-radius: 50%;
-  background: var(--accent);
+  flex-shrink: 0;
+  cursor: pointer;
+  animation: siri-breathe 5.5s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+  transition: transform 260ms var(--ease-expo);
+}
+
+.siri-orb-btn:active {
+  transform: scale(0.95);
+}
+
+.siri-orb-btn--poke {
+  --orb-size: 92px;
+  --mask-radius: 15%;
+  --dot-size: 0.74px;
+  --rim: 5.5px;
+  position: absolute;
+  bottom: 0.9rem;
+  right: 0.9rem;
+  z-index: 2;
+}
+
+.siri-orb-btn--poke.is-hop {
+  transform: translateY(-10px) scale(1.08);
+}
+
+.siri-orb-btn[data-orb-state="thinking"] {
+  --animation-duration: 11s;
+  --drift-duration: 8.5s;
+  --glow-opacity: 0.42;
+  --orb-scale: 1;
+  --orb-sat: 1.12;
+  --orb-hue: 14deg;
+  animation: none;
+}
+
+.siri-orb-btn[data-orb-state="streaming"] {
+  --animation-duration: 14.3s;
+  --drift-duration: 10s;
+  --glow-opacity: 0.36;
+  --glow-color: oklch(68% 0.21 340);
+  --orb-scale: 1.06;
+  --orb-sat: 1.05;
+  --orb-hue: -10deg;
+  animation: siri-speak 1.1s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+.siri-orb-btn[data-orb-state="listening"] {
+  --animation-duration: 20s;
+  --drift-duration: 12s;
+  --glow-opacity: 0.46;
+  --orb-scale: 1.06;
+  --orb-sat: 1.08;
+}
+
+.siri-orb-bloom {
+  position: absolute;
+  inset: -6%;
+  border-radius: 50%;
+  pointer-events: none;
+  background: var(--glow-color);
+  filter: blur(calc(var(--orb-size) * 0.32));
+  opacity: var(--glow-opacity);
+  transition: opacity 280ms var(--ease-out);
+}
+
+.siri-orb {
+  position: relative;
+  display: grid;
+  grid-template-areas: "stack";
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  isolation: isolate;
+  transform: scale(var(--orb-scale));
+  filter: saturate(var(--orb-sat)) hue-rotate(var(--orb-hue));
+  transition: transform 280ms var(--ease-out), filter 280ms ease;
+}
+
+.siri-orb::before,
+.siri-orb::after,
+.siri-orb > .siri-orb-layer {
+  content: "";
+  display: block;
+  grid-area: stack;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.siri-orb::before {
+  background: /* taste-skill-ignore */
+    conic-gradient(from calc(var(--siri-angle) * 2) at 25% 70%, var(--c3), transparent 20% 80%, var(--c3)), /* taste-skill-ignore */
+    conic-gradient(from calc(var(--siri-angle) * 2) at 45% 75%, var(--c2), transparent 30% 60%, var(--c2)), /* taste-skill-ignore */
+    conic-gradient(from calc(var(--siri-angle) * -3) at 80% 20%, var(--c1), transparent 40% 60%, var(--c1)), /* taste-skill-ignore */
+    conic-gradient(from calc(var(--siri-angle) * 1.5) at 60% 35%, var(--c4), transparent 25% 75%, var(--c4)), /* taste-skill-ignore */
+    conic-gradient(from calc(var(--siri-angle) * 2) at 15% 5%, var(--c2), transparent 10% 90%, var(--c2)), /* taste-skill-ignore */
+    conic-gradient(from calc(var(--siri-angle) * 1) at 20% 80%, var(--c1), transparent 10% 90%, var(--c1)), /* taste-skill-ignore */
+    conic-gradient(from calc(var(--siri-angle) * -2) at 85% 10%, var(--c3), transparent 20% 80%, var(--c3)); /* taste-skill-ignore */
+  box-shadow: inset var(--bg) 0 0 var(--shadow-spread) calc(var(--shadow-spread) * 0.2); /* taste-skill-ignore */
+  filter: blur(var(--blur-amount)) contrast(var(--contrast-amount)) saturate(1.4);
+  animation: siri-rotate var(--animation-duration) linear infinite;
+}
+
+.siri-orb::after {
+  background-image: radial-gradient(circle at center, var(--bg) var(--dot-size), transparent var(--dot-size)); /* taste-skill-ignore */
+  background-size: calc(var(--dot-size) * 2) calc(var(--dot-size) * 2);
+  backdrop-filter: blur(calc(var(--blur-amount) * 2)) contrast(calc(var(--contrast-amount) * 2)); /* taste-skill-ignore */
+  mix-blend-mode: overlay;
+  mask-image: radial-gradient(black var(--mask-radius), transparent 75%); /* taste-skill-ignore */
+}
+
+.siri-orb-sheen {
+  background: /* taste-skill-ignore */
+    radial-gradient(circle at 30% 24%, hsl(0 0% 100% / 0.34), transparent 34%), /* taste-skill-ignore */
+    radial-gradient(circle at 72% 80%, hsl(0 0% 100% / 0.08), transparent 48%); /* taste-skill-ignore */
+  mix-blend-mode: screen;
+  animation: siri-drift var(--drift-duration) ease-in-out infinite alternate;
+}
+
+.siri-orb-rim {
+  box-shadow: /* taste-skill-ignore */
+    inset 0 0 0 1px hsl(0 0% 100% / 0.16), /* taste-skill-ignore */
+    inset 0 calc(var(--rim) * 1) calc(var(--rim) * 2) hsl(0 0% 100% / 0.24), /* taste-skill-ignore */
+    inset 0 calc(var(--rim) * -1.2) calc(var(--rim) * 2.4) hsl(0 0% 0% / 0.4); /* taste-skill-ignore */
+  pointer-events: none;
+}
+
+@keyframes siri-rotate {
+  to { --siri-angle: 360deg; }
+}
+
+@keyframes siri-drift {
+  0% { transform: translate(-6%, -4%) scale(1.05); }
+  100% { transform: translate(7%, 6%) scale(1.12); }
+}
+
+@keyframes siri-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.035); }
+}
+
+@keyframes siri-speak {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
 .stage-ui__honest-title {
@@ -777,11 +942,6 @@ p {
 .stage-bubble__tag {
   color: var(--accent-strong);
   font-weight: 700;
-}
-
-@keyframes orb-breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
 }
 
 @media (max-width: 58em) {
@@ -961,39 +1121,6 @@ p {
   height: 100%;
   object-fit: cover;
   transition: opacity 280ms ease, transform 500ms var(--ease-soft);
-}
-
-.poke-orb {
-  position: absolute;
-  bottom: 0.9rem;
-  right: 0.9rem;
-  width: 5.5rem;
-  height: 5.5rem;
-  border-radius: 50%;
-  background: var(--field-blush);
-  display: grid;
-  place-items: center;
-  transition: transform 260ms var(--ease-expo);
-}
-
-.poke-orb__ring {
-  position: absolute;
-  width: 4.1rem;
-  height: 4.1rem;
-  border-radius: 50%;
-  background: var(--field-wisteria);
-}
-
-.poke-orb__core {
-  position: relative;
-  width: 2.3rem;
-  height: 2.3rem;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-.poke-orb.is-hop {
-  transform: translateY(-10px) scale(1.1);
 }
 
 .poke-scene-toggle {
@@ -2006,7 +2133,9 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .stage-ui__orb {
+  .siri-orb-btn,
+  .siri-orb::before,
+  .siri-orb-sheen {
     animation: none;
   }
 }

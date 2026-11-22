@@ -224,6 +224,7 @@
   // ------------------------------------------------------------------------
   // 2. ONE LIVE THING: INTERACTIVE VIVIAN ORB & SCENE TOY
   // ------------------------------------------------------------------------
+  const heroOrb = document.getElementById('heroOrb');
   const pokeSceneBg = document.getElementById('pokeSceneBg');
   const pokeOrb = document.getElementById('pokeOrb');
   const sceneBtns = document.querySelectorAll('.scene-btn');
@@ -275,12 +276,47 @@
     if (barFamiliarity) barFamiliarity.style.width = `${companion.familiarity}%`;
   }
 
+  const orbTimers = new WeakMap();
+
+  function pulseOrbState(orbEl) {
+    if (!orbEl) return;
+    const prev = orbTimers.get(orbEl);
+    if (prev) prev.forEach((id) => clearTimeout(id));
+    if (reducedMotion.matches) {
+      orbEl.setAttribute('data-orb-state', 'streaming');
+      orbTimers.set(orbEl, [window.setTimeout(() => orbEl.setAttribute('data-orb-state', 'idle'), 1200)]);
+      return;
+    }
+    orbEl.setAttribute('data-orb-state', 'thinking');
+    const t1 = window.setTimeout(() => orbEl.setAttribute('data-orb-state', 'streaming'), 220);
+    const t2 = window.setTimeout(() => orbEl.setAttribute('data-orb-state', 'idle'), 1750);
+    orbTimers.set(orbEl, [t1, t2]);
+  }
+
+  if (heroOrb) {
+    heroOrb.addEventListener('click', () => pulseOrbState(heroOrb));
+  }
+
   function hopOrb() {
-    if (!pokeOrb || reducedMotion.matches) return;
+    if (!pokeOrb) return;
+    pulseOrbState(pokeOrb);
+    if (reducedMotion.matches) return;
     pokeOrb.classList.remove('is-hop');
     void pokeOrb.offsetWidth;
     pokeOrb.classList.add('is-hop');
     window.setTimeout(() => pokeOrb.classList.remove('is-hop'), 280);
+  }
+
+  if (pokeOrb) {
+    pokeOrb.addEventListener('click', () => {
+      if (pokeTagEl && pokeTextEl) {
+        pokeTagEl.textContent = '[slightly flustered]';
+        pokeTextEl.textContent = 'อะ จิ้ม Orb เล่นอยู่ได้! เดี๋ยวก็สปินหนีซะหรอก อยากคุยยาวๆ ไปโคลน repo รัน Local สิแก!';
+      }
+      companion.familiarity = clampScore(companion.familiarity + 1);
+      renderMeters();
+      hopOrb();
+    });
   }
 
   sceneBtns.forEach((btn) => {
