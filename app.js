@@ -243,17 +243,17 @@
   const pokeResponses = {
     compliment: {
       tag: '[slightly flustered]',
-      text: 'ห๊ะ… เสียงน่ารักตรงไหนเล่า! แค่ส่งป้าย Emotion ให้ ElevenLabs v4 ช่วยเฉยๆ เอง อย่าชมดื้อๆ สิ ตาบ้าเอ๊ย!',
+      text: 'ห๊ะ… เสียงน่ารักตรงไหนเล่า! แค่ตั้งใจพูดให้ตรงอารมณ์เฉยๆ เอง อย่าชมดื้อๆ สิ ตาบ้าเอ๊ย!',
       delta: { affinity: 4, trust: 2, familiarity: 2 },
     },
     homework: {
       tag: '[playful]',
-      text: 'ฝันไปเถอะ! น้องเป็น companion ไม่ใช่เครื่องคิดเลขเดินได้นะ ไปลองคิดเองก่อนเลย เดี๋ยวค่อยดูให้!',
+      text: 'ฝันไปเถอะ! น้องเป็นเพื่อนคุยไม่ใช่เครื่องคิดเลขเดินได้นะ ไปลองคิดเองก่อนเลย เดี๋ยวค่อยช่วยดูให้!',
       delta: { affinity: -1, trust: 1, familiarity: 3 },
     },
     memory: {
       tag: '[curious]',
-      text: 'จำได้ดิ… ก็ซิงก์ลง Supabase ไว้อยู่แล้วนี่นา แต่ไม่ได้ตั้งใจจำเรื่องแกเป็นพิเศษหรอกนะ แค่เมมมันเก็บเอง!',
+      text: 'จำได้ดิ… ก็ความจำของน้องเชื่อมถึงกันหมดทุกเครื่องอยู่แล้วนี่นา แต่ไม่ได้ตั้งใจจำเรื่องแกเป็นพิเศษหรอกนะ!',
       delta: { affinity: 2, trust: 4, familiarity: 3 },
     },
     miss: {
@@ -311,7 +311,7 @@
     pokeOrb.addEventListener('click', () => {
       if (pokeTagEl && pokeTextEl) {
         pokeTagEl.textContent = '[slightly flustered]';
-        pokeTextEl.textContent = 'อะ จิ้ม Orb เล่นอยู่ได้! เดี๋ยวก็สปินหนีซะหรอก อยากคุยยาวๆ ไปโคลน repo รัน Local สิแก!';
+        pokeTextEl.textContent = 'อะ จิ้ม Orb เล่นอยู่ได้! อยากเห็นแบบขยับตัวก็กดเข้า vivianlabs.vercel.app แล้วหาโมเดลมาใส่เอาเองสิแก!';
       }
       companion.familiarity = clampScore(companion.familiarity + 1);
       renderMeters();
@@ -363,28 +363,8 @@
   });
 
   // ------------------------------------------------------------------------
-  // 2B. CHEEKY TEASE BUTTONS & LOCAL COMMAND COPY
+  // 2B. LOCAL COMMAND COPY
   // ------------------------------------------------------------------------
-  const topSecretBtn = document.getElementById('topSecretBtn');
-  const boardCheekyBtn = document.getElementById('boardCheekyBtn');
-  const ctaCheekyBtn = document.getElementById('ctaCheekyBtn');
-  const quickOutput = document.getElementById('quickChatOutput');
-
-  if (topSecretBtn) {
-    topSecretBtn.addEventListener('click', () => {
-      const ctaEl = document.getElementById('cta');
-      scrollToSection(ctaEl);
-      if (quickOutput) {
-        const tagSpan = quickOutput.querySelector('.cta-widget__tag');
-        const bodySpan = quickOutput.querySelector('span:last-child');
-        if (tagSpan) tagSpan.textContent = '[playful]';
-        if (bodySpan) {
-          bodySpan.textContent = 'เว็บ public ยังไม่เปิดหรอกนะ! แต่อยากลองเล่นเลยก็โคลน repo vivianlabs ด้านซ้ายไปรัน Local ได้ทันทีเลย!';
-        }
-      }
-    });
-  }
-
   const copyLocalBtn = document.getElementById('copyLocalBtn');
   const localCmdBlock = document.getElementById('localCmdBlock');
   if (copyLocalBtn && localCmdBlock) {
@@ -399,30 +379,6 @@
       window.setTimeout(() => {
         copyLocalBtn.textContent = 'คัดลอกคำสั่ง';
       }, 2200);
-    });
-  }
-
-  if (boardCheekyBtn) {
-    const cheekyLines = [
-      'เว็บ public? แอดมินซุ่มทำอยู่ อย่าเพิ่งทวง!',
-      'บอกว่ารอแป๊บไง กดย้ำอยู่ได้ เดี๋ยวไม่ให้เข้าเลยนี่!',
-      'อยากเล่นมากก็โคลน repo ไปรัน Local ก่อนสิแก!',
-    ];
-    let cheekyIdx = 0;
-    boardCheekyBtn.addEventListener('click', () => {
-      cheekyIdx = (cheekyIdx + 1) % cheekyLines.length;
-      boardCheekyBtn.textContent = cheekyLines[cheekyIdx];
-    });
-  }
-
-  if (ctaCheekyBtn && quickOutput) {
-    ctaCheekyBtn.addEventListener('click', () => {
-      const tagSpan = quickOutput.querySelector('.cta-widget__tag');
-      const bodySpan = quickOutput.querySelector('span:last-child');
-      if (tagSpan) tagSpan.textContent = '[giggles]';
-      if (bodySpan) {
-        bodySpan.textContent = 'แบร่! บอกว่ายังไม่เปิดลิงก์ public ไง รอ dev อัปเดต URL ใหม่ก่อนนะ อยากลองเลยก็โคลน repo vivianlabs ไปรัน Local เล่นพลางๆ ก่อน!';
-      }
     });
   }
 
@@ -460,25 +416,25 @@
 
   const workDetails = [
     {
-      badge: 'NEXT.JS 16 + CUBISM 4',
-      tag: 'RUN LOCAL',
+      badge: 'WEB COMPANION',
+      tag: 'OPEN PUBLIC',
       title: 'vivianlabs',
-      desc: 'ไม่มีโมเดล Live2D แถมใน repo เพราะติดลิขสิทธิ์ แต่โคลนไปรัน Local แล้วอัปโหลดโมเดล Cubism 4 ของคุณเองมาคุยด้วยข้อความ เสียง หรือกล้องสดได้เลย!',
+      desc: 'หน้าเว็บหลักของน้อง Vivian เปิดให้เข้าไปลองคุยจริงแล้วที่ vivianlabs.vercel.app พิมพ์ คุยเสียง หรือเปิดกล้องได้หมด แต่ไม่มีโมเดลแถมให้นะ อยากได้น้องหน้าแบบไหนไปหามาใส่เองเลย!',
       specs: [
-        'Chat & Vision: Groq Qwen 3.8 27B',
-        'Voice: ElevenLabs v4 + Groq Whisper STT',
-        'Local Auth Bypass: DEV_BYPASS_LOGIN=true',
+        'เข้าเล่นเลย: vivianlabs.vercel.app',
+        'โมเดลตัวละคร: ไม่มีแถมให้ ต้องหามาอัปโหลดใส่เอง',
+        'ทางเลือกเสริม: โคลนจาก GitHub ไปเปิดในเครื่องได้ด้วย',
       ],
     },
     {
-      badge: 'CLOUDFLARE WORKERS + D1',
-      tag: 'AUTH GATE',
+      badge: 'SECURITY GATE',
+      tag: 'AUTH SERVICE',
       title: 'vivianAuth',
-      desc: 'เซิร์ฟเวอร์ล็อกอินแยกขาดจาก Supabase เพื่อความปลอดภัยล้วนๆ จัดการ session ยาว 400 วันและส่ง deep link vivian://auth กลับเข้าแอปมือถือได้ทันที',
+      desc: 'ระบบประตูบ้านและล็อกอินแยกต่างหากออกจากความทรงจำการคุย เพื่อดูแลบัญชีผู้ใช้และความปลอดภัยของข้อมูลส่วนตัวทุกคน',
       specs: [
-        'OAuth: Google PKCE S256',
-        'Password Hash: PBKDF2-SHA256 (150k iters)',
-        'Protection: Cloudflare Turnstile + Invite Gate',
+        'Login: Google & บัญชีผู้ใช้แยกเฉพาะ',
+        'Privacy: แยกข้อมูลล็อกอินจากแชท',
+        'Role: ประตูบ้านหลักของเว็บ',
       ],
     },
     {
@@ -493,25 +449,25 @@
       ],
     },
     {
-      badge: 'KOTLIN + JETPACK COMPOSE',
+      badge: 'MOBILE ANDROID',
       tag: 'PRIVATE REPO',
       title: 'vivianapp',
-      desc: 'แอป Android แท้ๆ ใช้ Talking Orb, CameraX และเสียง TTS แต่ตอนนี้ขอปิด repo เป็น Private งดเปิดโหลดชั่วคราวนะ พอดีตัวแอปมีปัญหาเรื่องความปลอดภัยนิดหน่อยกับฝั่ง developer เลยไม่อยากให้ใครเข้ามาล่วงรู้ความลับของ dev จ้า',
+      desc: 'แอปมือถือฝั่ง Android ที่มี Talking Orb และถ่ายรูปส่งให้น้องดูได้ แต่ตอนนี้ขอปิด repo เป็น Private งดเปิดโหลดชั่วคราวนะ พอดีตัวแอปมีปัญหาเรื่องความปลอดภัยนิดหน่อยกับฝั่งผู้พัฒนา เลยไม่อยากให้ใครเข้ามาล่วงรู้ความลับของ dev จ้า',
       specs: [
-        'UI: Native Jetpack Compose (Min SDK 26)',
-        'Media: CameraX + 16 kHz Mono WAV Mic',
-        'Status: Private Repo (Security & Dev Privacy)',
+        'Platform: แอป Android',
+        'Features: Talking Orb & ส่งรูปให้น้องดู',
+        'Status: ปิด Private ชั่วคราว (Dev Privacy)',
       ],
     },
     {
-      badge: 'SWIFTUI + LIQUID GLASS',
+      badge: 'MOBILE IPHONE',
       tag: 'COMING BACK',
       title: 'vivianios',
-      desc: 'เวอร์ชัน iOS 26 Liquid Glass ที่มีทั้ง Talking Orb, WKWebView Live2D stage และ Keychain แต่ตอนนี้ขอพักโปรเจกต์ไว้ให้ dev ไปเรียนก่อน เดี๋ยวกลับมาทำต่อในอนาคต!',
+      desc: 'เวอร์ชัน iPhone ดีไซน์สวยลื่นที่ตั้งใจปั้นไว้สำหรับพกพาน้องติดเครื่อง แต่ตอนนี้ขอพักโปรเจกต์ไว้ให้ผู้พัฒนาไปเรียนก่อน เดี๋ยวกลับมาทำต่อในอนาคต!',
       specs: [
-        'UI: SwiftUI + iOS 26 glassEffect',
-        'Voice & Sync: AVFoundation + 16 MB Chunked R2',
-        'Status: Paused while dev studies',
+        'Platform: iOS / iPhone',
+        'Design: สไตล์กระจกใสพกพาน้องติดเครื่อง',
+        'Status: พักไว้ชั่วคราว (Dev ไปเรียนก่อน)',
       ],
     },
   ];
@@ -547,6 +503,7 @@
   // ------------------------------------------------------------------------
   const quickForm = document.getElementById('quickChatForm');
   const quickInput = document.getElementById('quickMsgInput');
+  const quickOutput = document.getElementById('quickChatOutput');
   const moodBtns = document.querySelectorAll('[data-mood-mode]');
   let moodMode = 'tsun';
 
@@ -593,7 +550,7 @@
     return mode === 'dere'
       ? {
           tag: '[giggles]',
-          msg: `รับทราบเรื่อง "${text}" แล้วจ้า~ ถ้าอยากคุยยาวๆ โคลน vivianlabs ไปรัน Local เล่นในเครื่องตัวเองได้เลยนะ!`,
+          msg: `รับทราบเรื่อง "${text}" แล้วจ้า~ ถ้าอยากคุยยาวๆ กดเข้า vivianlabs.vercel.app ไปคุยกับน้องเต็มๆ ได้เลยนะ!`,
         }
       : {
           tag: '[playful]',

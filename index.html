@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#FFE9F2" />
-  <title>Celestia Studio Present: Meet Vivian</title>
+  <title>Celestia Studio Present: พบกับ Vivian</title>
   <meta
     name="description"
-    content="Meet Vivian จาก Celestia Studio ทำความรู้จักน้อง Vivian สายซึน รันเล่นแบบ Local จาก repo vivianlabs, ระบบล็อกอิน vivianAuth, แบบสำรวจ vivianFeedback, แอป Android (ปิด Private ชั่วคราว) และแผน iOS"
+    content="พบกับ Vivian จาก Celestia Studio เพื่อนคุยสายซึนที่เปิดให้ลองเล่นแล้วที่ vivianlabs.vercel.app พร้อมเรื่องราวจุดเด่น แอปมือถือ และวิธีนำไปเล่นบนเครื่องตัวเอง"
   />
   <link
     rel="icon"
@@ -98,31 +98,43 @@
 
       <div class="topbar__right">
         <ul class="nav-links">
-          <li><a href="#family-grid" class="link">ฉากกับระบบ</a></li>
+          <li><a href="#family-grid" class="link">บรรยากาศจริง</a></li>
           <li><a href="#live-poke" class="link">แหย่น้อง</a></li>
           <li><a href="#showcase" class="link">โปรเจกต์</a></li>
-          <li><a href="#cta" class="link">รัน Local</a></li>
+          <li><a href="#cta" class="link">รันในเครื่อง</a></li>
         </ul>
-        <button type="button" class="button" id="topSecretBtn">
-          เว็บ Public? รอแป๊บ!
-        </button>
+        <a
+          href="https://vivianlabs.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button"
+        >
+          เข้าเว็บเล่นเลย!
+        </a>
       </div>
     </nav>
 
     <div class="hero__stage wrap grid">
       <div class="hero__copy">
-        <h1 class="hero__title lines" aria-label="Meet Vivian">
-          <span class="line hero__line--sky"><span data-line style="--i:0">MEET</span></span>
+        <h1 class="hero__title lines" aria-label="พบกับ Vivian">
+          <span class="line hero__line--sky"><span data-line style="--i:0">พบกับ</span></span>
           <span class="line hero__line--earth"><span data-line style="--i:1">VIVIAN</span></span>
         </h1>
 
         <p class="hero__lead" data-rise style="--i:2">
-          บอกกันตรงๆ เลยว่าหน้านี้ไม่มีรูปตัวละคร Vivian นะ (โมเดล Live2D จริงติดลิขสิทธิ์!) แต่อยากแนะนำตัวรัน Local จาก repo vivianlabs แอป Android กับ iOS ให้รู้จักกันครบๆ เฉยๆ หรอก!
+          เว็บน้อง Vivian เปิดให้ทุกคนเข้าไปคุยเล่นแบบ Public แล้วนะ! คุยรู้เรื่อง จำเรื่องเราได้ และสลับฉากห้องได้ด้วย แต่บอกไว้ตรงนี้เลยว่าไม่มีโมเดลตัวละครแถมให้นะ อยากได้แบบไหนไปหามาใส่เองเลย!
         </p>
 
         <div class="hero__actions" data-rise style="--i:3">
-          <a href="#cta" class="button">ลองรัน Local จาก Repo</a>
-          <a href="#live-poke" class="link-plain hero__secondary">แหย่น้องตรงนี้ก่อนเลย</a>
+          <a
+            href="https://vivianlabs.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button"
+          >
+            เปิดเว็บไปคุยกับน้องเลย
+          </a>
+          <a href="#live-poke" class="link-plain hero__secondary">หรือแหย่น้องตรงนี้ก่อน</a>
         </div>
       </div>
 
@@ -130,7 +142,7 @@
       <div class="hero__stage-ui" data-ui data-rise style="--i:1">
         <div class="stage-ui__bar">
           <span class="stage-ui__name">vivianlabs / stage</span>
-          <span class="stage-ui__badge">NO MODEL LOADED</span>
+          <span class="stage-ui__badge">PUBLIC OPEN · NO BUNDLED MODEL</span>
         </div>
 
         <div class="stage-ui__canvas">
@@ -147,19 +159,19 @@
               <span class="siri-orb-layer siri-orb-rim"></span>
             </span>
           </button>
-          <p class="stage-ui__honest-title">ยังไม่มีรูปน้องโชว์ตรงนี้นะ!</p>
+          <p class="stage-ui__honest-title">เว็บเปิดแล้ว แต่ไม่มีโมเดลให้นะ ไปหามาเอง!</p>
           <p class="stage-ui__honest-note">
-            โมเดล Live2D ที่ใช้จริงติดเงื่อนไขลิขสิทธิ์ห้ามแจกต่อ เลยขอใช้ Talking Orb แทนก่อน ถ้าอยากใส่โมเดลของตัวเอง โคลน repo ไปรัน Local แล้ว import ได้เลย
+            เข้าไปคุยผ่าน Talking Orb ด้านบนได้เลยทันที แต่ถ้าอยากได้ตัวละครขยับตามเสียง ต้องไปหาไฟล์โมเดลของตัวเองมาอัปโหลดใส่ในเว็บนะ (เราไม่แถมโมเดลให้!)
           </p>
         </div>
 
         <div class="stage-ui__bubbles">
           <div class="stage-bubble stage-bubble--user">
-            ไหนขอเห็นหน้าน้อง Vivian หน่อยสิ
+            แล้วเข้าไปเล่นเลยจะมีตัวละครแถมให้ไหม?
           </div>
           <div class="stage-bubble stage-bubble--vivian">
             <span class="stage-bubble__tag">[slightly flustered]</span>
-            <span>ห๊ะ… บอกตรงๆ ว่าไม่มีรูปให้ดูหรอกนะ! อยากเห็นนักก็โคลน repo ไปรัน Local ใส่โมเดลเอาเองสิ ตาบ้าเอ๊ย!</span>
+            <span>ไม่มีโมเดลแถมให้หรอกนะ! อยากได้น้องหน้าตาแบบไหนก็ไปหามาใส่เอาเองสิ หรือจะคุยผ่าน Orb ตรงนี้ก่อนก็ได้!</span>
           </div>
         </div>
       </div>
@@ -167,66 +179,56 @@
   </header>
 
   <main id="main">
-    <!-- ==================== SECTION 1: REAL SCENES + UI SYSTEM TILES + ONE LIVE THING ==================== -->
+    <!-- ==================== SECTION 1: REAL APP PREVIEW + DAY/NIGHT SCENES + LIVE TOY ==================== -->
     <section class="section section--blush wrap" id="family-grid">
       <div class="section-head grid">
-        <h2 class="head" data-lines>ฉากห้องจริงกับสมองของน้อง</h2>
+        <h2 class="head" data-lines>บรรยากาศตอนเปิดเล่นจริง</h2>
         <p class="lead" data-reveal>
-          ไม่มีรูปตัวละครก็เลยขอโชว์ฉากห้องจริงจากใน repo พร้อมหน้าตาการทำงานของระบบความจำ ความสนิท และ Talking Orb แทนให้ดูแบบไม่อ้อมค้อมเลย
+          เก็บภาพจากหน้าเว็บจริงที่เปิดให้เล่นแล้วพร้อมฉากห้องกลางวัน–กลางคืนมาให้ดูแบบเต็มตา ตัดการ์ดข้อมูลรกๆ ออกหมดแล้ว จะได้ดูง่ายๆ สบายตา!
         </p>
       </div>
 
       <ul class="tile-grid">
-        <li class="tile-card tile-card--pink" data-reveal style="--stagger:0">
-          <div class="tile-card__media">
+        <li class="tile-card tile-card--pink tile-card--feature" data-reveal style="--stagger:0">
+          <div class="tile-card__media tile-card__media--feature">
             <img
-              src="assets/christmas-day-4x3.jpg"
-              alt="ฉากห้องนั่งเล่นตอนกลางวันจริงจากโปรเจกต์ vivianlabs"
-              width="1440"
-              height="1080"
+              src="assets/vivian-live-preview.jpg"
+              alt="ภาพหน้าเว็บจริง vivianlabs.vercel.app ขณะแสดงตัวอย่างตัวละครและ Talking Orb ในห้องคริสต์มาส"
+              width="1024"
+              height="637"
               loading="lazy"
             />
           </div>
-          <p class="tile-card__name">Daylight Cozy Room</p>
-          <p class="tile-card__role">ภาพฉากห้องตอนกลางวันของจริงที่อยู่ใน public/backgrounds ของ vivianlabs</p>
+          <p class="tile-card__name">หน้าตาตอนใส่โมเดลบนเว็บจริง</p>
+          <p class="tile-card__role">ตัวอย่างตอนนำโมเดลเข้ามาใส่ใน vivianlabs.vercel.app คู่กับ Talking Orb (ในเว็บจริงไม่มีโมเดลให้นะ ต้องไปหามาใส่เอง!)</p>
         </li>
 
         <li class="tile-card tile-card--lilac" data-reveal style="--stagger:1">
           <div class="tile-card__media">
             <img
-              src="assets/christmas-night-4x3.jpg"
-              alt="ฉากห้องนั่งเล่นตอนกลางคืนจริงจากโปรเจกต์ vivianlabs"
+              src="assets/christmas-day-4x3.jpg"
+              alt="ฉากห้องนั่งเล่นตอนกลางวันของ Vivian"
               width="1440"
               height="1080"
               loading="lazy"
             />
           </div>
-          <p class="tile-card__name">Midnight Talk Scene</p>
-          <p class="tile-card__role">ภาพฉากห้องตอนกลางคืนของจริง ไว้เปิดคุยชิลๆ หรือเปลี่ยนฉากเองได้</p>
+          <p class="tile-card__name">ฉากห้องกลางวัน</p>
+          <p class="tile-card__role">ห้องสว่างสดใสเอาไว้เปิดคุยชิลๆ ระหว่างวัน หรือสลับบรรยากาศเองได้ตลอด</p>
         </li>
 
-        <li class="tile-card tile-card--sakura" data-reveal style="--stagger:2">
-          <div class="tile-card__ui" data-ui>
-            <p class="mini-ui__head">Vivian Memory State</p>
-            <div class="mini-ui__stat"><span>Affinity Band</span><span>Close (68/100)</span></div>
-            <div class="mini-ui__stat"><span>Model Limit</span><span>512 MiB BYO ZIP</span></div>
-            <div class="mini-ui__stat"><span>Custom Prompt</span><span>2,000 chars max</span></div>
-            <div class="mini-ui__stat"><span>JEV Cutoff</span><span>&gt;= 0.85 score</span></div>
+        <li class="tile-card tile-card--wisteria" data-reveal style="--stagger:2">
+          <div class="tile-card__media">
+            <img
+              src="assets/christmas-night-4x3.jpg"
+              alt="ฉากห้องนั่งเล่นตอนกลางคืนของ Vivian"
+              width="1440"
+              height="1080"
+              loading="lazy"
+            />
           </div>
-          <p class="tile-card__name">ระบบความจำและอารมณ์</p>
-          <p class="tile-card__role">เก็บความสนิทและความจำลง Supabase พร้อมจำกัด delta ต่อเทิร์นไม่ให้หลุดคาแรกเตอร์</p>
-        </li>
-
-        <li class="tile-card tile-card--wisteria" data-reveal style="--stagger:3">
-          <div class="tile-card__ui" data-ui>
-            <p class="mini-ui__head">Auth &amp; Voice Pipeline</p>
-            <div class="mini-ui__stat"><span>Chat + Vision</span><span>Qwen 3.8 27B</span></div>
-            <div class="mini-ui__stat"><span>Memory Model</span><span>GPT-OSS 20B</span></div>
-            <div class="mini-ui__stat"><span>Voice TTS</span><span>ElevenLabs v4</span></div>
-            <div class="mini-ui__stat"><span>Auth Store</span><span>Cloudflare D1</span></div>
-          </div>
-          <p class="tile-card__name">หลังบ้านตัวจริงของน้อง</p>
-          <p class="tile-card__role">รวมเสียงพากย์ Emotion tag, วิเคราะห์ภาพ และด่านล็อกอินแยกบน Workers</p>
+          <p class="tile-card__name">ฉากห้องกลางคืน</p>
+          <p class="tile-card__role">สลับเป็นห้องมืดอบอุ่นตอนดึก ไว้นั่งเม้าท์ก่อนนอนให้ได้ฟีลอีกแบบ</p>
         </li>
       </ul>
 
@@ -265,7 +267,7 @@
         <div class="poke-box__panel">
           <h3 class="poke-box__title">ลองแหย่ Vivian Orb ดูสักทีสิ</h3>
           <p class="poke-box__desc">
-            เวลาไม่มีโมเดล Live2D ตัวแอปจริงก็ใช้ Talking Orb กะพริบจังหวะแทนแบบนี้แหละ! ลองจิ้มแหย่น้องดูค่า <code>affinity</code> กับ <code>trust</code> และป้ายเสียง ElevenLabs v4 ด้านล่างได้เลย
+            เวลาไม่ได้ใส่โมเดลตัวละคร น้องจะคุยผ่านเจ้า Talking Orb ลูกนี้แทน! ลองจิ้มแหย่ดูสิว่าค่าความสนิท ความไว้ใจ กับคำตอบสายซึนจะขยับไปทางไหน
           </p>
 
           <div class="poke-actions">
@@ -278,7 +280,7 @@
           <div class="poke-reply" aria-live="polite">
             <p class="poke-reply__tag" id="pokeEmotionTag">[playful]</p>
             <p class="poke-reply__text" id="pokeReplyText">
-              ห๊ะ จ้องลูกกลมๆ อยู่ได้… ก็บอกแล้วไงว่ายังไม่มีรูปน้องให้ดูบนเว็บ อยากเห็น Live2D ก็ไปรัน Local เอาเองสิ ตาบ้า!
+              ห๊ะ จ้องลูกกลมๆ อยู่ได้… อยากเห็นร่างตัวละครก็ไปหาไฟล์โมเดลมาใส่เองในเว็บหลักสิ ตาบ้า!
             </p>
           </div>
 
@@ -314,7 +316,7 @@
       <div class="wrap showcase-intro">
         <h2 class="head showcase-heading" data-lines>โปรเจกต์รอบตัว Vivian</h2>
         <p class="lead showcase-lead" data-reveal>
-          เจาะลึกทุกชิ้นในระบบของน้อง Vivian ตั้งแต่ตัวเว็บที่รัน Local จาก GitHub ได้เลย จนถึงแอปมือถือ กดที่แถวไหนก็ได้เพื่อดูสเปกเต็มๆ
+          รวมทุกส่วนรอบตัวน้อง Vivian ตั้งแต่หน้าเว็บหลักที่เปิด Public ให้เล่นแล้ว ไปจนถึงแอปมือถือกับระบบหลังบ้าน แตะเปิดอ่านแต่ละแถวได้เลย
         </p>
       </div>
 
@@ -322,20 +324,25 @@
         <div class="board__row is-open" data-board-row>
           <button type="button" class="board__trigger" aria-expanded="true">
             <span class="board__name">vivianlabs</span>
-            <span class="board__meta">Next.js 16 · PixiJS Cubism 4</span>
-            <span class="board__meta">Run Local Ready · Qwen 3.8 + ElevenLabs v4</span>
-            <span class="board__status board__status--live">LOCAL + REPO</span>
+            <span class="board__meta">หน้าเว็บหลัก · เปิดเล่นสาธารณะแล้ว</span>
+            <span class="board__meta">คุยเสียง &amp; กล้อง · ไม่มีโมเดลแถม ไปหามาเอง</span>
+            <span class="board__status board__status--live">OPEN PUBLIC</span>
           </button>
           <div class="board__detail">
             <p>
-              ตัวแม่ของระบบ! แชทกับน้องบนเว็บแบบมี Live2D ขยับปากตามเสียง (นำเข้าโมเดลที่มีสิทธิ์ใช้งานได้เองในเครื่อง) พูดไทยได้ เห็นรูปจากกล้องสด มี JEV decision layer (0.85) กับ Supabase + R2 ใครอยากลองเล่นก็โคลนจาก GitHub ไปรัน Local ได้เลย!
+              ตัวหลักของบ้าน! ตอนนี้เปิดให้ทุกคนเข้าไปคุยกับน้องได้แล้วที่ vivianlabs.vercel.app พิมพ์คุย พูดเสียง เปิดกล้องให้น้องเห็น และสลับฉากห้องได้ครบ แต่ไม่มีโมเดลตัวละครแถมให้นะ อยากได้ตัวไหนไปหามาใส่เองเลย!
             </p>
             <div class="board__links">
-              <button type="button" class="board__cheeky-btn" id="boardCheekyBtn">
-                เว็บ public? แอดมินซุ่มทำอยู่ อย่าเพิ่งทวง!
-              </button>
+              <a
+                href="https://vivianlabs.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="board__cheeky-btn"
+              >
+                เปิดเว็บเล่นเลย: vivianlabs.vercel.app
+              </a>
               <a href="https://github.com/celestia-sora/vivianlabs" target="_blank" rel="noopener noreferrer" class="link-plain">GitHub: celestia-sora/vivianlabs</a>
-              <a href="#cta" class="link-plain">ดูวิธีรัน Local ด้านล่าง</a>
+              <a href="#cta" class="link-plain">ดูวิธีรันบนเครื่องตัวเอง</a>
             </div>
           </div>
         </div>
@@ -343,16 +350,16 @@
         <div class="board__row" data-board-row>
           <button type="button" class="board__trigger" aria-expanded="false">
             <span class="board__name">vivianAuth</span>
-            <span class="board__meta">Cloudflare Workers · OpenNext</span>
-            <span class="board__meta">D1 SQLite · Google PKCE + Turnstile</span>
+            <span class="board__meta">ระบบประตูบ้าน &amp; ล็อกอิน</span>
+            <span class="board__meta">แยกเก็บข้อมูลผู้ใช้ปลอดภัย</span>
             <span class="board__status board__status--auth">AUTH GATE</span>
           </button>
           <div class="board__detail">
             <p>
-              ด่านตรวจคนเข้าบ้าน! เซิร์ฟเวอร์ล็อกอินแยกบน Cloudflare Workers + D1 รองรับ Google OAuth PKCE S256, รหัสผ่าน PBKDF2-SHA256, session 400 วัน และส่ง deep link vivian://auth ให้แอปมือถือ
+              ด่านตรวจคนเข้าบ้านของโปรเจกต์ แยกส่วนการล็อกอินและบัญชีผู้ใช้ไว้ต่างหากจากความทรงจำการคุย เพื่อความปลอดภัยและความเป็นส่วนตัวสูงสุด
             </p>
             <div class="board__links">
-              <span class="board__note">Private Auth Service · เช็กสิทธิ์ผ่าน token แยกจากฐานข้อมูลความจำ</span>
+              <span class="board__note">Private Auth Service · ดูแลเรื่องประตูบ้านและการเข้าสู่ระบบ</span>
             </div>
           </div>
         </div>
@@ -377,13 +384,13 @@
         <div class="board__row" data-board-row>
           <button type="button" class="board__trigger" aria-expanded="false">
             <span class="board__name">vivianapp</span>
-            <span class="board__meta">Kotlin 2.4 · Jetpack Compose</span>
-            <span class="board__meta">Private Repo · Dev Security</span>
+            <span class="board__meta">แอปมือถือ Android</span>
+            <span class="board__meta">ปิดเป็นส่วนตัวชั่วคราว</span>
             <span class="board__status board__status--android">PRIVATE REPO</span>
           </button>
           <div class="board__detail">
             <p>
-              แอป Android แท้ๆ ที่มี Talking Orb ขยับตามเสียง TTS, CameraX และซิงก์ความจำกับบนเว็บ แต่ตอนนี้ขอปิด repo เป็น Private งดเปิดโหลดชั่วคราวก่อนนะ พอดีตัวแอปมีปัญหาเรื่องความปลอดภัยนิดหน่อยกับตัว developer เลยไม่อยากให้ใครเข้ามาล่วงรู้ความลับของ dev จ้า
+              แอปมือถือฝั่ง Android ที่มี Talking Orb และถ่ายรูปส่งให้น้องดูได้ แต่ตอนนี้ขอปิด repo เป็น Private งดเปิดโหลดชั่วคราวก่อนนะ พอดีตัวแอปมีปัญหาเรื่องความปลอดภัยนิดหน่อยกับตัว developer เลยไม่อยากให้ใครเข้ามาล่วงรู้ความลับของ dev จ้า
             </p>
             <div class="board__links">
               <span class="board__note">Status: ปิด Private ชั่วคราว งดเปิดโหลดเพื่อความปลอดภัยและความลับของ dev</span>
@@ -394,13 +401,13 @@
         <div class="board__row" data-board-row>
           <button type="button" class="board__trigger" aria-expanded="false">
             <span class="board__name">vivianios</span>
-            <span class="board__meta">SwiftUI · iOS 26 Liquid Glass</span>
-            <span class="board__meta">WKWebView Live2D · AVFoundation</span>
+            <span class="board__meta">เวอร์ชัน iPhone / iOS</span>
+            <span class="board__meta">ผู้พัฒนาขอพักไปเรียนก่อน</span>
             <span class="board__status board__status--paused">COMING BACK</span>
           </button>
           <div class="board__detail">
             <p>
-              น้องไอโฟนดีไซน์ Liquid Glass ที่อัดแน่นทั้ง Live2D stage, Keychain และอัปโหลดโมเดลแบบแบ่งไฟล์ 16 MB ตอนนี้ขอพักไว้ชั่วคราวก่อน เพราะ dev ขอตัวไปเรียนก่อน เดี๋ยวกลับมาทำต่อในอนาคตแน่นอน!
+              เวอร์ชัน iPhone ดีไซน์สวยลื่นที่ตั้งใจปั้นไว้สำหรับพกพาน้องติดเครื่อง แต่ตอนนี้ dev ขอตัวไปเรียนก่อน เดี๋ยวมีเวลาจะกลับมาทำต่อในอนาคตแน่นอน!
             </p>
             <div class="board__links">
               <span class="board__note">Status: Dev ขอไปเรียนก่อน แล้วเจอกันใหม่ในอนาคต!</span>
@@ -415,7 +422,7 @@
       <div class="chapter-field chapter-field--lilac">
         <div class="chapter-field__inner wrap grid">
           <p class="chapter-field__note" data-reveal>
-            ไม่ว่าจะรันเว็บ vivianlabs บนเครื่องตัวเอง หรือใช้ตัว client เฉพาะของ dev ขึ้นมาคุย ความจำ ความสนิท (affinity, trust) และ custom instructions สูงสุด 2,000 ตัวอักษร ก็ซิงก์ตามไปทุกเครื่องผ่าน Supabase
+            ไม่ว่าจะคุยผ่านเว็บสาธารณะหรือเปิดเล่นบนเครื่องตัวเอง ความสนิท ความไว้ใจ และนิสัยส่วนตัวที่ตั้งให้น้อง ก็ซิงก์ตามไปจำต่อได้เหมือนกันทุกที่
           </p>
           <h2 class="chapter-field__title" data-lines>
             ความจำชุดเดียว<br class="only-wide" /> ตามไปทุกเครื่อง
@@ -426,7 +433,7 @@
       <div class="chapter-field chapter-field--pink chapter-field--mirror">
         <div class="chapter-field__inner wrap grid">
           <p class="chapter-field__note" data-reveal>
-            ใช้ Groq Qwen 3.8 27B คุยและเห็นรูป, GPT-OSS 20B สรุปความจำ, และ JEV ช่วยเช็กก่อนว่าต้องเสิร์ชไหม พร้อมป้าย Emotion tags ให้เสียง ElevenLabs v4 อ้อนหรือซึนได้ตรงฟีล
+            น้องไม่ได้แค่ตอบตามสคริปต์ แต่จับอารมณ์ได้ ดูรูปที่ส่งไปได้ และเลือกน้ำเสียงตามความรู้สึก ณ ตอนนั้น จะโหมดซึน โหมดเขิน หรือโหมดอ้อนก็มาครบ
           </p>
           <p class="chapter-field__title" data-lines>
             ไม่ได้เป็นแค่บอท<br class="only-wide" /> แต่น้องมีอารมณ์
@@ -437,7 +444,7 @@
       <div class="chapter-field chapter-field--wisteria">
         <div class="chapter-field__inner wrap grid">
           <p class="chapter-field__note" data-reveal>
-            คีย์ลับทุกตัวเก็บฝั่งเซิร์ฟเวอร์หมด! ประตูบ้านใช้ vivianAuth บน Cloudflare D1 เก็บ token ด้วย Keystore AES/GCM บน Android และ Keychain บน iOS แถมรัน Local ก็ใช้โหมด DEV_BYPASS_LOGIN=true ได้ด้วย
+            ระบบล็อกอินกับข้อมูลส่วนตัวถูกแยกเก็บไว้อย่างมิดชิดไม่ให้หลุดง่ายๆ ส่วนตัวไหนที่ยังไม่มั่นใจเรื่องความปลอดภัย อย่างแอป Android ก็ปิดเก็บไว้ก่อนจนกว่าจะชัวร์
           </p>
           <p class="chapter-field__title" data-lines>
             น่ารักก็จริง<br class="only-wide" /> แต่ปลอดภัยนะเว้ย
@@ -446,23 +453,23 @@
       </div>
     </section>
 
-    <!-- ==================== SECTION 4: WORK (BIG NAMES, LIVE UI PREVIEW) ==================== -->
+    <!-- ==================== SECTION 4: WORK (BIG NAMES, LIVE PREVIEW CARD) ==================== -->
     <section class="section section--rose wrap" id="work">
-      <h2 class="work-heading" data-lines>ส่องสเปกแต่ละโปรเจกต์</h2>
+      <h2 class="work-heading" data-lines>ส่องแต่ละโปรเจกต์</h2>
 
       <div class="work-layout grid">
         <ul class="work-list" id="workList">
           <li class="work-item is-active" data-work-index="0">
             <button type="button" class="work-item__btn">
               <span class="work-item__name">vivianlabs</span>
-              <span class="work-item__meta">Local Ready · Next.js + Live2D</span>
+              <span class="work-item__meta">เปิด Public แล้ว · ไม่มีโมเดลแถม</span>
             </button>
           </li>
 
           <li class="work-item" data-work-index="1">
             <button type="button" class="work-item__btn">
               <span class="work-item__name">vivianAuth</span>
-              <span class="work-item__meta">D1 Gateway · Workers</span>
+              <span class="work-item__meta">ประตูบ้าน &amp; ล็อกอินแยก</span>
             </button>
           </li>
 
@@ -476,14 +483,14 @@
           <li class="work-item" data-work-index="3">
             <button type="button" class="work-item__btn">
               <span class="work-item__name">vivianapp</span>
-              <span class="work-item__meta">Android · Private Repo</span>
+              <span class="work-item__meta">Android · ปิด Private ชั่วคราว</span>
             </button>
           </li>
 
           <li class="work-item" data-work-index="4">
             <button type="button" class="work-item__btn">
               <span class="work-item__name">vivianios</span>
-              <span class="work-item__meta">SwiftUI · Dev ขอไปเรียนก่อน</span>
+              <span class="work-item__meta">iOS · Dev ขอไปเรียนก่อน</span>
             </button>
           </li>
         </ul>
@@ -491,17 +498,17 @@
         <div class="work-preview-col">
           <div class="work-preview-card" id="workPreviewCard" data-ui>
             <div class="work-card__top">
-              <span class="work-card__badge" id="workCardBadge">NEXT.JS 16 + CUBISM 4</span>
-              <span class="work-card__tag" id="workCardTag">RUN LOCAL</span>
+              <span class="work-card__badge" id="workCardBadge">WEB COMPANION</span>
+              <span class="work-card__tag" id="workCardTag">OPEN PUBLIC</span>
             </div>
             <h3 class="work-card__title" id="workCardTitle">vivianlabs</h3>
             <p class="work-card__desc" id="workCardDesc">
-              ไม่มีโมเดล Live2D แถมใน repo เพราะติดลิขสิทธิ์ แต่โคลนไปรัน Local แล้วอัปโหลดโมเดล Cubism 4 ของคุณเองมาคุยด้วยข้อความ เสียง หรือกล้องสดได้เลย!
+              หน้าเว็บหลักของน้อง Vivian เปิดให้เข้าไปลองคุยจริงแล้วที่ vivianlabs.vercel.app พิมพ์ คุยเสียง หรือเปิดกล้องได้หมด แต่ไม่มีโมเดลแถมให้นะ อยากได้น้องหน้าแบบไหนไปหามาใส่เองเลย!
             </p>
             <ul class="work-card__specs" id="workCardSpecs">
-              <li>Chat &amp; Vision: Groq Qwen 3.8 27B</li>
-              <li>Voice: ElevenLabs v4 + Groq Whisper STT</li>
-              <li>Local Auth Bypass: DEV_BYPASS_LOGIN=true</li>
+              <li>เข้าเล่นเลย: vivianlabs.vercel.app</li>
+              <li>โมเดลตัวละคร: ไม่มีแถมให้ ต้องหามาอัปโหลดใส่เอง</li>
+              <li>ทางเลือกเสริม: โคลนจาก GitHub ไปเปิดในเครื่องได้ด้วย</li>
             </ul>
           </div>
           <p class="work-preview-caption" id="workCaption">
@@ -530,12 +537,12 @@
         <div class="faq-list">
           <details class="faq-tile" name="vivian-faq" open>
             <summary class="faq-tile__head">
-              <span>ทำไมหน้าเว็บนี้ไม่มีรูปตัวละคร Vivian เลยล่ะ?</span>
+              <span>ในเว็บมีโมเดลตัวละครแถมมาให้เลยไหม?</span>
               <span class="faq-tile__plus" aria-hidden="true"></span>
             </summary>
             <div class="faq-tile__body">
               <p>
-                บอกตรงๆ เลยว่าโมเดล Live2D ที่ใช้คู่กับ Vivian มีเงื่อนไขลิขสิทธิ์ห้ามแจกจ่ายสาธารณะ และเราก็ไม่อยากเอารูปปลอมมาแอบอ้างว่าเป็นน้อง! หน้านี้เลยโชว์แค่ฉากห้องจริงกับอินเทอร์เฟซ Talking Orb แทนนะ
+                ไม่มีโมเดลให้นะ ไปหามาเองเลย! บนเว็บจะมี Talking Orb ให้เล่นคุยได้ทันที แต่ถ้าอยากได้น้อง Live2D มายืนขยับปากในห้องแบบในรูปตัวอย่าง ก็สามารถไปหาไฟล์โมเดลที่ชอบมาอัปโหลดใส่เองได้จ้า
               </p>
             </div>
           </details>
@@ -547,7 +554,7 @@
             </summary>
             <div class="faq-tile__body">
               <p>
-                ตัวเว็บ public กำลังรอเปิดอยู่นะ แต่ถ้าอยากเล่นเลยตอนนี้ มีวิธีรัน Local ในเครื่องตัวเองแบบง่ายๆ จาก repo vivianlabs บน GitHub (ใส่แค่ GROQ_API_KEY กับ DEV_BYPASS_LOGIN=true ก็คุยกับน้องได้แล้ว!)
+                ตอนนี้เปิดให้เข้าเล่นแบบ Public แล้วที่ vivianlabs.vercel.app เลย! กดลิงก์บนหน้านี้แล้วเข้าไปคุยกับน้องได้ทันที หรือถ้าใครอยากเอาโค้ดไปเปิดเล่นบนเครื่องตัวเองก็โคลนจาก GitHub ได้เหมือนกัน
               </p>
             </div>
           </details>
@@ -559,7 +566,7 @@
             </summary>
             <div class="faq-tile__body">
               <p>
-                ตอนสร้าง vivianios ทำจัดเต็มด้วย SwiftUI + iOS 26 Liquid Glass, WKWebView Live2D stage และ Keychain ไว้แล้วนะ แต่ตอนนี้ dev ขอตัวไปตั้งใจเรียนก่อน! เดี๋ยวพอมีเวลาจะกลับมาปั้นต่อในอนาคตแน่นอน
+                เวอร์ชัน iPhone ตั้งใจออกแบบไว้สวยลื่นมากๆ แต่ตอนนี้ dev ขอตัวไปตั้งใจเรียนก่อน! เดี๋ยวพอมีเวลาจะกลับมาปั้นต่อในอนาคตแน่นอน
               </p>
             </div>
           </details>
@@ -571,7 +578,7 @@
             </summary>
             <div class="faq-tile__body">
               <p>
-                ยังไม่ได้น้า~ ฝั่งแอป Android (vivianapp) ตอนนี้ dev ปิด repo เป็น Private งดเปิดโหลดไว้ก่อน! พอดีตัวแอปมีปัญหาเรื่องความปลอดภัยนิดหน่อยกับตัว developer เลยไม่อยากให้ใครเข้ามาล่วงรู้ความลับของ dev จ้า ตอนนี้แนะนำให้โคลน repo vivianlabs ไปรันเล่นแบบ Local แทนก่อนนะ!
+                ยังไม่ได้น้า~ ฝั่งแอป Android (vivianapp) ตอนนี้ dev ปิด repo เป็น Private งดเปิดโหลดไว้ก่อน! พอดีตัวแอปมีปัญหาเรื่องความปลอดภัยนิดหน่อยกับตัว developer เลยไม่อยากให้ใครเข้ามาล่วงรู้ความลับของ dev จ้า ตอนนี้แนะนำให้ไปเล่นบนเว็บ vivianlabs.vercel.app แทนก่อนนะ!
               </p>
             </div>
           </details>
@@ -583,7 +590,7 @@
             </summary>
             <div class="faq-tile__body">
               <p>
-                ห๊ะ คิดว่าน้องเป็นเลขาเหรอ?! ไม่ใช่ซักหน่อย! น้องถูกเขียนให้เป็น companion สายซึนเดเระที่มีความคิดและอารมณ์ของตัวเอง ถ้าถามเรื่องส่วนตัวตรงๆ แรกๆ ก็มีเขินมีปัดตกบ้าง ต้องตื๊อให้ถูกจังหวะถึงจะใจอ่อนให้นะ
+                ห๊ะ คิดว่าน้องเป็นเลขาเหรอ?! ไม่ใช่ซักหน่อย! น้องถูกเขียนให้เป็นเพื่อนคุยสายซึนเดเระที่มีความคิดและอารมณ์ของตัวเอง ถ้าถามเรื่องส่วนตัวตรงๆ แรกๆ ก็มีเขินมีปัดตกบ้าง ต้องตื๊อให้ถูกจังหวะถึงจะใจอ่อนให้นะ
               </p>
             </div>
           </details>
@@ -591,20 +598,20 @@
       </div>
     </section>
 
-    <!-- ==================== SECTION 6: CTA (LOCAL RUN FROM VIVIANLABS + QUICK TEST) ==================== -->
+    <!-- ==================== SECTION 6: CTA (PUBLIC LIVE + LOCAL OPTION + QUICK TEST) ==================== -->
     <section class="section section--sakura wrap" id="cta">
       <div class="cta-layout grid">
         <div class="cta-copy">
           <h2 class="cta-copy__title" data-lines>
-            อยากลองเล่นเลย<br class="only-wide" /> รัน Local ได้นะ!
+            เปิด Public แล้วนะ<br class="only-wide" /> ไปเล่นเลยสิ!
           </h2>
           <p class="cta-copy__desc" data-reveal>
-            ระหว่างรอเว็บ public เปิด ใครอยากคุยกับน้องแบบเต็มระบบ โคลน repo vivianlabs ไปรัน Local ในเครื่องตัวเองได้เลย (ไม่ต้องมีระบบล็อกอินก็ได้แค่เปิด DEV_BYPASS_LOGIN=true ส่วนแอป Android ขอปิด Private เก็บความลับของ dev ไว้ก่อนนะ!)
+            ไม่ต้องรอแล้ว! เข้าไปคุยกับน้องได้ที่ vivianlabs.vercel.app ได้เลยตอนนี้ (ย้ำว่าไม่มีโมเดลตัวละครแถมให้นะ ไปหามาใส่เอง หรือเล่น Talking Orb ไปก่อนก็ได้) ส่วนใครสายอยากเปิดเล่นในเครื่องตัวเองก็ก๊อปคำสั่งด้านล่างไปรันได้จ้า
           </p>
 
           <div class="local-box" data-ui>
             <div class="local-box__head">
-              <span>รันจาก GitHub repo vivianlabs (Node.js 22.13+)</span>
+              <span>ทางเลือกเสริม: รันในเครื่องตัวเองจาก GitHub</span>
               <button type="button" class="local-copy-btn" id="copyLocalBtn">คัดลอกคำสั่ง</button>
             </div>
             <pre class="local-box__code" id="localCmdBlock" data-lenis-prevent><code>git clone https://github.com/celestia-sora/vivianlabs.git
@@ -616,17 +623,22 @@ DEV_BYPASS_LOGIN=true npm run dev</code></pre>
 
           <div class="cta-links" data-reveal>
             <a
-              href="https://github.com/celestia-sora/vivianlabs"
+              href="https://vivianlabs.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               class="button"
             >
-              เปิด Repo vivianlabs
+              เข้าเว็บ vivianlabs.vercel.app
             </a>
-            <a href="#work" class="link-plain cta-repo-link">ส่องสถานะโปรเจกต์ทั้งหมด</a>
-            <button type="button" class="link-plain cta-cheeky-link" id="ctaCheekyBtn">
-              แล้วเว็บ Public ล่ะ?
-            </button>
+            <a
+              href="https://github.com/celestia-sora/vivianlabs"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-plain cta-repo-link"
+            >
+              ดูโค้ดบน GitHub
+            </a>
+            <a href="#work" class="link-plain cta-cheeky-link">ส่องสถานะโปรเจกต์ทั้งหมด</a>
           </div>
         </div>
 
@@ -639,7 +651,7 @@ DEV_BYPASS_LOGIN=true npm run dev</code></pre>
             class="field"
             type="text"
             maxlength="80"
-            value="วันนี้เขียนโค้ดเหนื่อยจัง ขอกำลังใจหน่อย"
+            value="วันนี้เหนื่อยจังเลย ขอกำลังใจหน่อย"
           />
 
           <div class="cta-seg" role="group" aria-label="เลือกระดับความซึน">
@@ -687,9 +699,10 @@ DEV_BYPASS_LOGIN=true npm run dev</code></pre>
 
     <div class="footer-grid grid">
       <div class="footer-col">
-        <p class="footer-col__title">Meet Vivian</p>
+        <p class="footer-col__title">พบกับ Vivian</p>
         <ul class="footer-col__list">
-          <li><a href="https://github.com/celestia-sora/vivianlabs" target="_blank" rel="noopener noreferrer" class="link">vivianlabs (Run Local / GitHub)</a></li>
+          <li><a href="https://vivianlabs.vercel.app" target="_blank" rel="noopener noreferrer" class="link">เข้าเว็บ vivianlabs.vercel.app</a></li>
+          <li><a href="https://github.com/celestia-sora/vivianlabs" target="_blank" rel="noopener noreferrer" class="link">vivianlabs (GitHub / รันในเครื่อง)</a></li>
           <li><a href="#showcase" class="link">vivianapp Android (Private ชั่วคราว)</a></li>
           <li><a href="#showcase" class="link">vivianAuth &amp; vivianFeedback</a></li>
           <li><a href="#showcase" class="link">vivianios (กลับมาทำต่อในอนาคต)</a></li>
@@ -708,13 +721,13 @@ DEV_BYPASS_LOGIN=true npm run dev</code></pre>
       <div class="footer-col">
         <p class="footer-col__title">หมายเหตุจาก dev</p>
         <p class="footer-col__note">
-          หน้า Meet Vivian รอบนี้พร้อมโฮสต์บน GitHub Pages แล้ว ไม่มีรูปตัวละครติดลิขสิทธิ์และไม่มี gradient แม้แต่จุดเดียว!
+          หน้า พบกับ Vivian เปิดเล่นสาธารณะแล้วที่ vivianlabs.vercel.app (ไม่มีโมเดลตัวละครแถมให้นะ อยากได้แบบไหนไปหามาใส่เอง!)
         </p>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p class="small">Celestia Studio Present: Meet Vivian</p>
+      <p class="small">Celestia Studio Present: พบกับ Vivian</p>
       <button type="button" class="button footer-replay" id="footerReplayBtn">
         เล่น Intro อีกรอบ
       </button>
