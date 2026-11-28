@@ -416,14 +416,14 @@
 
   const workDetails = [
     {
-      badge: 'WEB COMPANION',
-      tag: 'OPEN PUBLIC',
+      badge: 'WEB COMPANION · v3.0.0',
+      tag: 'v3.0.0 LIVE',
       title: 'vivianlabs',
-      desc: 'หน้าเว็บหลักของน้อง Vivian เปิดให้เข้าไปลองคุยจริงแล้วที่ vivianlabs.vercel.app พิมพ์ คุยเสียง หรือเปิดกล้องได้หมด แต่ไม่มีโมเดลแถมให้นะ อยากได้น้องหน้าแบบไหนไปหามาใส่เองเลย!',
+      desc: 'หน้าเว็บหลักของน้อง Vivian อัปเดตใหญ่ v3.0.0 แล้วที่ vivianlabs.vercel.app รองรับทั้ง Live2D และ 3D (.vrm / .vrma / .fbx) ฟิสิกส์ 3D 30–120Hz, 24 ท่าทางพร้อมพรีวิวสด, Scribe v3 Live + ElevenLabs v4 และสรุปความจำบนหน้าเว็บ (ไม่มีโมเดลแถมนะ ไปหามาใส่เอง!)',
       specs: [
-        'เข้าเล่นเลย: vivianlabs.vercel.app',
-        'โมเดลตัวละคร: ไม่มีแถมให้ ต้องหามาอัปโหลดใส่เอง',
-        'ทางเลือกเสริม: โคลนจาก GitHub ไปเปิดในเครื่องได้ด้วย',
+        'Avatar v3.0.0: Dual Live2D + 3D (.vrm 0.x/1.0, .vrma, .fbx) & Cloud R2',
+        '3D Motion: 3D Physics 30–120Hz · 24 ท่าทาง (Zero-Twist IK) · พรีวิวสด',
+        'Voice & Memory: Scribe v3 Live · ElevenLabs v4 · สรุปความจำภาษาไทย',
       ],
     },
     {

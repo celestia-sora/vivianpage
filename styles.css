@@ -1230,6 +1230,159 @@ p {
 }
 
 /* ==========================================================================
+   2B. SECTION 1B: RELEASE v3.0.0 CHANGELOG HIGHLIGHTS
+   ========================================================================== */
+.section--lavender {
+  background: var(--field-lavender);
+  color: var(--ink);
+}
+
+.release-head {
+  align-items: end;
+}
+
+.release-head__title {
+  grid-column: 1 / 7;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.release-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background: var(--field-plum);
+  color: var(--field-plum-ink);
+  font-size: var(--step-small);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.release-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.release-card {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  border-radius: var(--radius);
+  background: var(--field-blush);
+  color: var(--ink);
+}
+
+.release-card--featured {
+  grid-column: span 3;
+  background: var(--field-plum);
+  color: var(--field-plum-ink);
+}
+
+.release-card--pink {
+  grid-column: span 3;
+  background: var(--field-pink);
+  color: var(--ink);
+}
+
+.release-card--blush {
+  background: var(--field-blush);
+  color: var(--ink);
+}
+
+.release-card--lilac {
+  background: var(--field-lilac);
+  color: var(--ink);
+}
+
+.release-card__tag {
+  align-self: flex-start;
+  padding: 0.25rem 0.78rem;
+  border-radius: var(--radius-pill);
+  background: var(--field-wisteria);
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.release-card--featured .release-card__tag {
+  background: var(--field-pink);
+  color: var(--ink);
+}
+
+.release-card--pink .release-card__tag {
+  background: var(--field-blush);
+  color: var(--ink);
+}
+
+.release-card__title {
+  font-size: var(--step-lead);
+  line-height: 1.35;
+}
+
+.release-card--featured .release-card__title {
+  color: var(--field-pink);
+}
+
+.release-card__desc {
+  font-size: var(--step-small);
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+.release-card--featured .release-card__desc {
+  color: var(--field-plum-soft);
+}
+
+.release-card--featured code {
+  background: var(--field-plum-row);
+  color: var(--field-pink);
+}
+
+.release-footer {
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+
+@media (max-width: 64em) {
+  .release-card,
+  .release-card--featured,
+  .release-card--pink {
+    grid-column: span 3;
+  }
+  .release-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 54em) {
+  .release-head__title {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 42em) {
+  .release-grid {
+    grid-template-columns: 1fr;
+  }
+  .release-card,
+  .release-card--featured,
+  .release-card--pink,
+  .release-card:last-child {
+    grid-column: auto;
+  }
+}
+
+/* ==========================================================================
    3. SECTION 2: SHOWCASE (ROWS AS A BOARD)
    ========================================================================== */
 .section--plum {
